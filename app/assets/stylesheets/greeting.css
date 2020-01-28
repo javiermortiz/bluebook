@@ -1,0 +1,42 @@
+.login_bluebar_container {
+    background-color: #3b5998;
+}
+
+.login_bluebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+}
+
+.login_logo {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: white;
+    float: left;
+    font-weight: 700;
+} 
+
+.login_form_container {
+    float: right;
+}
+
+.login_form {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    align-items: flex-end;
+}
+
+.login_form input, label {
+    display: block;
+}
+
+.login_form label {
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+}
+
+

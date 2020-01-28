@@ -21,10 +21,10 @@ const receiveSessionErrors = errors => ({
 export const signup = user => dispatch => (
     APIUtil.signup(user)
         .then(user => (
-            dispatch(receiveCurrentUser(user))
-        ), err => (
-            dispatch(receiveSessionErrors(err.responseJSON))
-        )
+                dispatch(receiveCurrentUser(user))
+            ), err => (
+                dispatch(receiveSessionErrors(err.responseJSON))
+            )
         )
 );
 

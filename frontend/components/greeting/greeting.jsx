@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LoginFormContainer from "../session_form/login_form_container";
+import SignupFormContainer from "../session_form/signup_form_container";
+import { AuthRoute } from '../../util/route_util';
 
 class Greeting extends React.Component {
     constructor (props) {
@@ -16,9 +19,15 @@ class Greeting extends React.Component {
             )
         } else {
             return (
-                <div>
-                    <Link to='/signup'>Sign Up</Link>
-                    <Link to='/login'>Log In</Link>
+                <div className="welcome_page">
+                    <AuthRoute path="/" component={LoginFormContainer} />
+                    <div className="global_container">
+                        <div className="world_map">
+
+                        </div>
+                        <AuthRoute path="/" component={SignupFormContainer} />
+                    </div>
+                    
                 </div>
             )
         }
