@@ -11,6 +11,8 @@
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
@@ -22,7 +24,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack -w --mode=development"
   },
   "repository": {
     "type": "git",
