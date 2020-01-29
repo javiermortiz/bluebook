@@ -1,3 +1,4 @@
+/* login bar */
 .login_bluebar_container {
     background-color: #3b5998;
 }
@@ -15,15 +16,18 @@
     color: white;
     float: left;
     font-weight: 700;
+    font-size: 20px;
 } 
 
 .login_form_container {
     float: right;
+    width: 400px;
+    margin-right: 120px;
 }
 
 .login_form {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0;
     margin: 0;
     align-items: flex-end;
@@ -39,4 +43,111 @@
     font-weight: 400;
 }
 
+.input_email, .input_password {
+    width: 200px;
+}
 
+.login_button {
+    background-color: #3b5998;
+    color: white;
+    border: .5px solid black;
+    margin-left: 0px;
+}
+
+/* signup section */
+.global_signup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 80%;
+}
+
+.signup_message_container > h3 {
+    color: #3b5998;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    width: 80%;
+}
+
+.global_signup_container {
+    background-color: #edf0f5;
+    height: 588px;
+}
+
+.create_account {
+    color: #333;
+    font-size: 36px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.free_always {
+    color: #333;
+    font-size: 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.bday, .gender {
+    color: #333;
+    font-size:18px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.bday-selector {
+    margin-bottom: 10px;
+}
+
+.signup_form_container {
+    width: 500px;
+}
+
+.first_name_input, .last_name_input {
+    display: inline-block;
+    font-size: 18px;
+    padding: 8px 10px;
+    border: 1px solid #bdc7d8;
+    border-radius: 5px;
+    color:#333;
+    margin-bottom:10px;
+    width: 37.5%;
+}
+
+.email_input, .password_input {
+    display: inline-block;
+    font-size: 18px;
+    padding: 8px 10px;
+    border: 1px solid #bdc7d8;
+    border-radius: 5px;
+    color:#333;
+    margin-bottom:10px;
+    width: 80%;
+}
+
+.gender, .gender_input {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.sex {
+    margin-bottom: 20px;
+}
+
+.signup_button {
+    font-size: 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(#67ae55, #578843);
+    width: 200px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    box-shadow: inset 0 1px 1px #a4e388;
+}
