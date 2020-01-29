@@ -4,8 +4,14 @@ class SignupForm extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
+            firstName: '',
+            surname: '',
             email: '',
-            password: ''
+            password: '',
+            month: '',
+            day: '',
+            year: '',
+            gender: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -27,12 +33,36 @@ class SignupForm extends React.Component {
 
     handleSubmit (e) {
         e.preventDefault();
-        this.props.processForm(this.state);
-        this.setState({email: '', password: ''});
+        const birthday = `${this.state.year}-${this.state.month}-${this.state.day}`
+        const user = {
+            first_name: this.state.firstName,
+            surname: this.state.surname,
+            email: this.state.email,
+            password: this.state.password,
+            birthday: birthday,
+            gender: this.state.gender
+        }
+        this.props.processForm(user);
+        this.setState({
+            firstName: '',
+            surname: '',
+            email: '',
+            password: '',
+            month: '',
+            day: '',
+            year: '',
+            gender: ''
+        });
     }
 
     update (field) {
-        return e => this.setState({ [field]: e.currentTarget.value });
+        return e => {
+            if (field === 'gender') {
+                this.setState({ [field]: e.currentTarget.id })
+            } else {
+                this.setState({ [field]: e.currentTarget.value })
+            }
+        }
     }
 
     render () {
@@ -61,11 +91,15 @@ class SignupForm extends React.Component {
                                     type="text"
                                     className="first_name_input"
                                     placeholder="First name"
+                                    onChange={this.update("firstName")}
+                                    value={this.state.firstName}
                                 />
                                 <input
                                     type="text"
                                     className="last_name_input"
                                     placeholder="Surname"
+                                    onChange={this.update("surname")}
+                                    value={this.state.surname}
                                 />
                             </div>
                             
@@ -91,7 +125,8 @@ class SignupForm extends React.Component {
                             
                             <div className="bday">Birthday</div>
                             <div className="bday-selector">
-                                <select title="Month" className="selectbody">
+                                <select title="Month" className="select_bday"
+                                    onChange={this.update("month")} value={this.state.month}>
                                     <option value="0" defaultValue="1">Month</option>
                                     <option value="1">Jan</option>
                                     <option value="2">Feb</option>
@@ -106,7 +141,8 @@ class SignupForm extends React.Component {
                                     <option value="11">Nov</option>
                                     <option value="12">Dec</option>
                                 </select>
-                                <select title="Day" className="selectbody fl">
+                                <select title="Day" className="select_bday"
+                                    onChange={this.update("day")} value={this.state.day}>
                                     <option value="0" defaultValue="1">Day</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -140,7 +176,8 @@ class SignupForm extends React.Component {
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select title="Year" className="selectbody fl">
+                                <select title="Year" className="select_bday"
+                                    onChange={this.update("year")} value={this.state.year}>
                                     <option value="0" defaultValue="1">Year</option>
                                     <option value="2015">2015</option>
                                     <option value="2014">2014</option>
@@ -262,12 +299,16 @@ class SignupForm extends React.Component {
                                         type="radio"
                                         id="female"
                                         className="gender_input"
+                                        onChange={this.update("gender")}
+                                        value={this.state.gender}
                                     />
                                     <label htmlFor="female" className="gender">Female</label>
                                     <input
                                         type="radio"
                                         id="male"
                                         className="gender_input"
+                                        onChange={this.update("gender")} 
+                                        value={this.state.gender}
                                     />
                                     <label htmlFor="male" className="gender">Male</label>
                                 </span>
