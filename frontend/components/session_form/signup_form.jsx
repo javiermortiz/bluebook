@@ -300,7 +300,7 @@ class SignupForm extends React.Component {
                                         id="female"
                                         className="gender_input"
                                         onChange={this.update("gender")}
-                                        value={this.state.gender}
+                                        checked={this.state.gender === 'female'}
                                     />
                                     <label htmlFor="female" className="gender">Female</label>
                                     <input
@@ -308,7 +308,7 @@ class SignupForm extends React.Component {
                                         id="male"
                                         className="gender_input"
                                         onChange={this.update("gender")} 
-                                        value={this.state.gender}
+                                        checked={this.state.gender === 'male'}
                                     />
                                     <label htmlFor="male" className="gender">Male</label>
                                 </span>
