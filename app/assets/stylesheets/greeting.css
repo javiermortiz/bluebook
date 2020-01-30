@@ -1,144 +1,167 @@
-/* login bar */
-.login_bluebar_container {
+/* login */
+.login-header {
     background-color: #3b5998;
 }
 
-.login_bluebar {
+.login-nav {
+    width: 1000px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    width: 80%;
 }
 
-.login_logo {
-    font-family: 'IBM Plex Sans', sans-serif;
-    color: white;
-    float: left;
-    font-weight: 700;
-    font-size: 20px;
-} 
-
-.login_form_container {
-    float: right;
-    width: 400px;
-    margin-right: 120px;
-}
-
-.login_form {
+.login-nav-form {
     display: flex;
-    justify-content: space-evenly;
-    padding: 0;
-    margin: 0;
-    align-items: flex-end;
-}
-
-.login_form input, label {
-    display: block;
-}
-
-.login_form label {
-    color: white;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-}
-
-.input_email, .input_password {
-    width: 200px;
-}
-
-.login_button {
-    background-color: #3b5998;
-    color: white;
-    border: .5px solid black;
-    margin-left: 0px;
-}
-
-/* signup section */
-.global_signup {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
-    width: 80%;
-}
-
-.signup_message_container > h3 {
-    color: #3b5998;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 700;
-    width: 80%;
-}
-
-.global_signup_container {
-    background-color: #edf0f5;
-    height: 588px;
-}
-
-.create_account {
-    color: #333;
-    font-size: 36px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 700;
-    margin-top: 20px;
-}
-
-.free_always {
-    color: #333;
-    font-size: 20px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
-.bday, .gender {
-    color: #333;
-    font-size:18px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-.bday-selector {
-    margin-bottom: 10px;
-}
-
-.signup_form_container {
+    justify-content: space-around;
+    padding-top: 15px;
     width: 500px;
 }
 
-.first_name_input, .last_name_input {
-    display: inline-block;
-    font-size: 18px;
-    padding: 8px 10px;
-    border: 1px solid #bdc7d8;
-    border-radius: 5px;
-    color:#333;
-    margin-bottom:10px;
-    width: 37.5%;
+.login-nav-form-email, .login-nav-form-password {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 15px;
 }
 
-.email_input, .password_input {
-    display: inline-block;
-    font-size: 18px;
-    padding: 8px 10px;
-    border: 1px solid #bdc7d8;
-    border-radius: 5px;
-    color:#333;
-    margin-bottom:10px;
-    width: 80%;
+.login-nav-form-email > label, .login-nav-form-password > label {
+    padding-bottom: 3px;
 }
 
-.gender, .gender_input {
-    display: inline-block;
-    margin-right: 5px;
+.login-nav-form-email > input, .login-nav-form-password > input {
+    width: 150px;
+    border-radius: 2px;
+    border-style: none;
+    height: 18px;
+    padding-left: 3px;
+    background-color: #dde8ff;
 }
 
-.sex {
+.login-nav-form-button {
+    padding-top: 15px;
+}
+
+.login-nav-form-button > input {
+    color: white;
+    background-color: #4461a1;
+    border-color: black;
+    cursor: pointer;
+}
+
+.login-nav-logo {
+    padding: 25px 10px 10px 10px;
+    color: white;
+    font-size: 35px;
+}
+
+/* signup */
+
+.signup-main {
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-main-message {
+    width: 400px;
+    color: #3b5998;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 40px;
+    line-height: 1.5em;
+}
+
+.signup-main-form {
+    width: 425px;
+    margin-right: 20px;
+    margin-top: 25px;
+}
+
+.signup-main-form > h2 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.signup-main-form > h3 {
+    font-size: 20px;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
-.signup_button {
+.signup-main-form-name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-form input[type=text],
+.signup-form input[type=email], 
+.signup-form input[type=password] {
+    display: block;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding-left: 10px;
+    border-style: solid;
+    border-color: lightgray;
+}
+
+.signup-form input[type=text]::placeholder,
+.signup-form input[type=email]::placeholder, 
+.signup-form input[type=password]::placeholder{
+    color: #a7a9aa;
+    font-weight: 400;
+}
+
+.signup-main-form-name > input {
+    width: 190px;
+}
+
+.signup-main-form-email > input, 
+.signup-main-form-password > input {
+    width: 410px;
+}
+
+.signup-form-text > div {
+    padding: 5px 0;
+}
+
+.signup-form-text {
+    margin-bottom: 20px;
+}
+
+.signup-main-form-birthday > h2 {
+    font-size: 18px;
+    color: rgb(151, 148, 148);
+    margin-bottom: 5px;
+}
+
+.signup-main-form-birthday {
+    margin-bottom: 10px;
+}
+
+.signup-main-form-gender > h2 {
+    font-size: 18px;
+    color: rgb(151, 148, 148);
+    margin-bottom: 5px;
+}
+
+.gender-inputs {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.gender-male {
+    margin-left: 15px;
+}
+
+.gender-inputs input {
+    margin-right: 5px;
+}
+
+.signup-main-form-button input {
     font-size: 20px;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 700;
@@ -150,11 +173,5 @@
     border: 1px solid;
     border-color: #3b6e22 #3b6e22 #2c5115;
     box-shadow: inset 0 1px 1px #a4e388;
-}
-
-/* logged in user */
-
-body {
-    background-color: #edf0f5;
-    font-family: 'IBM Plex Sans', sans-serif;
+    cursor: pointer;
 }

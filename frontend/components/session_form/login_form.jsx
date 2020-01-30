@@ -37,48 +37,46 @@ class LoginForm extends React.Component {
 
     render () {
         return (
-            <div className="login_bluebar_container">
+            <div className="login-header">
 
-                <div className="login_bluebar">
+                <nav className="login-nav">
 
-                    <div className="login_logo">
-                        <h1>bluebook</h1>
-                    </div>
+                    <h1 className="login-nav-logo">bluebook</h1>
 
-                    <div className="login_form_container">
-                        <form onSubmit={this.handleSubmit} className="login_form">
-                            <div className="login-email">
-                                <label htmlFor="input-email">
-                                    Email
+                    <form onSubmit={this.handleSubmit} className="login-nav-form">
+                        <div className="login-nav-form-email">
+                            <label htmlFor="email">
+                                Email
                             </label>
-                                <input
-                                    id="input-email"
-                                    type='email'
-                                    value={this.state.email}
-                                    onChange={this.update('email')}
-                                />
-                            </div>
-                            <div className="login-password">
-                                <label htmlFor="input-password">
-                                    Password
-                            </label>
-                                <input
-                                    id="input-password"
-                                    type='password'
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                />
-                            </div>
+                            <input
+                                id="email"
+                                type='email'
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                            />
+                        </div>
+                        <div className="login-nav-form-password">
+                            <label htmlFor="password">
+                                Password
+                        </label>
+                            <input
+                                id="password"
+                                type='password'
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                            />
+                        </div>
+                        <div className="login-nav-form-button">
                             <input
                                 type="submit"
                                 value={this.props.formType}
                                 className="login_button"
                             />
-                            {this.renderErrors()}
-                        </form>
-                    </div>
+                        </div>
+                        {this.renderErrors()}
+                    </form>
 
-                </div>
+                </nav>
 
             </div>
             

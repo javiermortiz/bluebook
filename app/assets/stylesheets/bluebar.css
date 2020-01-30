@@ -60,6 +60,37 @@
     cursor: pointer;
     padding: 2px 15px;
 }
+
+.bluebar_nav {
+    position: relative;
+}
+
+#dropdown {
+    position: absolute;
+    width: 240px;
+    background-color: white;
+    top: 60px;
+    right: 6px;
+}
+
+#dropdown > li {
+    border-top: 1px solid #edf0f5;
+    border-bottom: 1px solid #edf0f5;
+    padding: 5px;
+}
+
+#dropdown button {
+    width: 100%;
+    cursor: pointer;
+    border-style: none;
+    padding: 3px;
+    font-size: 13px;
+}
+
+#dropdown button:hover {
+    background-color: #3b5998;
+    color: white;
+}
 /* .logo {
     flex: left;
     background-color: white;
