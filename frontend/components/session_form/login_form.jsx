@@ -5,30 +5,36 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            errors: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     renderErrors () {
-        if (!this.props.errors.length) return null;
+        if (this.state.errors === "") return null;
         return (
-            <ul>
-                {this.props.errors.map((error, i) => {
-                    return (
-                        <li key={`error-${i}`}>
-                           {error}
-                        </li>
-                    )
-                })}
-            </ul>
+            <div className="errors-box" id="login-errors-box">
+                <div className="login-arrow-right"></div>
+                <p className="login-errors-message">
+                    Wrong email/password.
+                </p>
+            </div>
         )
     }
 
     handleSubmit (e) {
         e.preventDefault();
-        this.props.processForm(this.state);
-        this.setState({email: '', password: ''});
+        const user = {email: this.state.email, password: this.state.password};
+        if (Object.values(user).every(stateField => stateField !== "")) {
+            this.props.processForm(user);
+            this.setState({
+                email: '',
+                password: '',
+            });
+        } else {
+            this.setState({ errors: 'errors' });
+        }
     }
 
     update (field) {
@@ -53,6 +59,7 @@ class LoginForm extends React.Component {
                                 type='email'
                                 value={this.state.email}
                                 onChange={this.update('email')}
+                                className={`login-email ${this.state.errors}`}
                             />
                         </div>
                         <div className="login-nav-form-password">
@@ -64,6 +71,7 @@ class LoginForm extends React.Component {
                                 type='password'
                                 value={this.state.password}
                                 onChange={this.update('password')}
+                                className={`login-password ${this.state.errors}`}
                             />
                         </div>
                         <div className="login-nav-form-button">

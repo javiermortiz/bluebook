@@ -24,14 +24,16 @@
     font-size: 15px;
 }
 
-.login-nav-form-email > label, .login-nav-form-password > label {
+.login-nav-form-email > label, 
+.login-nav-form-password > label {
     padding-bottom: 3px;
 }
 
-.login-nav-form-email > input, .login-nav-form-password > input {
+.login-email, 
+.login-password {
     width: 150px;
     border-radius: 2px;
-    border-style: none;
+    border: .5px solid black;
     height: 18px;
     padding-left: 3px;
     background-color: #dde8ff;
@@ -46,6 +48,11 @@
     background-color: #4461a1;
     border-color: black;
     cursor: pointer;
+    padding: 5px;
+}
+
+.login-nav-form-button > input:hover {
+    background-color: #2f477a;
 }
 
 .login-nav-logo {
@@ -95,9 +102,7 @@
     justify-content: space-between;
 }
 
-.signup-form input[type=text],
-.signup-form input[type=email], 
-.signup-form input[type=password] {
+.signup-form-text input {
     display: block;
     height: 30px;
     border-radius: 5px;
@@ -107,9 +112,7 @@
     border-color: lightgray;
 }
 
-.signup-form input[type=text]::placeholder,
-.signup-form input[type=email]::placeholder, 
-.signup-form input[type=password]::placeholder{
+.signup-form-text input::placeholder {
     color: #a7a9aa;
     font-weight: 400;
 }
@@ -174,4 +177,79 @@
     border-color: #3b6e22 #3b6e22 #2c5115;
     box-shadow: inset 0 1px 1px #a4e388;
     cursor: pointer;
+}
+
+/* errors */
+.signup-form-text .errors, .errors{
+    border: 1px solid red;
+}
+
+.gender-male, .gender-female {
+    border-radius: 5px;
+}
+
+.login-email .errors, 
+.login-password .errors {
+    border: 1px solid red;
+    border-style: solid;
+}
+
+.signup-errors-message {
+    background-color: rgb(195, 47, 47);
+    color: white;
+    width: 150px;
+    padding: 10px;
+    line-height: 1.5em;
+    border-radius: 5px;
+}
+
+.signup-arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid rgb(195, 47, 47);
+  margin-left: -1px;
+}
+
+.login-errors-message {
+    background-color: rgb(195, 47, 47);
+    color: white;
+    width: 180px;
+    padding: 5px;
+    line-height: 1.5em;
+    border-radius: 5px;
+}
+
+.login-arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid rgb(195, 47, 47);
+  margin-left: -4px;
+}
+.errors-box {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: absolute;
+}
+
+.signup-main-form {
+    position: relative;
+}
+
+.login-nav-form {
+    position: relative;
+}
+
+#login-errors-box {
+    top: 25px;
+    left: -180px;
+}
+
+#signup-errors-box {
+    top: 60px;
+    left: -185px;
 }
