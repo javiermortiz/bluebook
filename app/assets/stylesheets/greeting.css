@@ -151,3 +151,10 @@
     border-color: #3b6e22 #3b6e22 #2c5115;
     box-shadow: inset 0 1px 1px #a4e388;
 }
+
+/* logged in user */
+
+body {
+    background-color: #edf0f5;
+    font-family: 'IBM Plex Sans', sans-serif;
+}

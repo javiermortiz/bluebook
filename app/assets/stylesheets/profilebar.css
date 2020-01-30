@@ -1,0 +1,33 @@
+.profile_nav {
+    background-color: white;
+    width: 1000px;
+    margin-left: 50px;
+}
+
+.profile_nav_list {
+    float: right;
+    margin-right: 100px;
+}
+
+.profile_nav_list > li {
+    float: left;
+    border-left: .2px solid lightgrey;
+    border-right: .2px solid lightgrey;
+}
+
+.profile_nav_list > li > a {
+    color: #3b5998;
+    font-weight: 400;
+    padding: 10px 20px;
+    display: block;
+}
+
+.profile_nav_list > li > a:hover {
+    background-color: rgba(243, 243, 243, 0.746);
+}
+
+.group:after {
+    content: "";
+    display: block;
+    clear: both;
+}

@@ -15,10 +15,13 @@ class Bluebar extends React.Component {
     render () {
         const { currentUser, logout } = this.props;
         return (
-            <div className="bluebar">
-                <Link to={`/newsfeed/${currentUser.id}`}><p className="logo">b</p></Link>
-                <nav className="bluebar_navbar">
-                    <ul>
+            <header className="bluebar">
+
+                <nav className="bluebar_nav group">
+
+                    <h1 className="bluebar_nav_logo"><Link to={`/newsfeed/${currentUser.id}`}>b</Link></h1>
+
+                    <ul className="bluebar_nav_list group">
                         <li><Link to={`/profile/${currentUser.id}`}>{currentUser.first_name}</Link></li>
                         <li><button onClick={this.openDropdown}>&#9662;</button></li>
                     </ul>
@@ -31,7 +34,7 @@ class Bluebar extends React.Component {
                         </ul>
                     }
                 </nav>
-            </div>
+            </header>
         )
     }
     

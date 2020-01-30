@@ -3,6 +3,7 @@ import LoginFormContainer from "../session_form/login_form_container";
 import SignupFormContainer from "../session_form/signup_form_container";
 import { AuthRoute } from '../../util/route_util';
 import Bluebar from '../logged_in/bluebar';
+import Profilebar from '../logged_in/profilebar';
 
 class Greeting extends React.Component {
     constructor (props) {
@@ -14,8 +15,7 @@ class Greeting extends React.Component {
             return (
                 <div>
                     <Bluebar currentUser={this.props.currentUser} logout={this.props.logout}/>
-                    {/* <h1>Welcome {this.props.currentUser.email}</h1>
-                    <button onClick={this.props.logout}>Log Out</button> */}
+                    <Profilebar currentUser={this.props.currentUser} />
                 </div>
             )
         } else {
