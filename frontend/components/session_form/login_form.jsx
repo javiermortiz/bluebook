@@ -5,36 +5,18 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            password: '',
-            errors: ''
+            password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    renderErrors () {
-        if (this.state.errors === "") return null;
-        return (
-            <div className="errors-box" id="login-errors-box">
-                <div className="login-arrow-right"></div>
-                <p className="login-errors-message">
-                    Wrong email/password.
-                </p>
-            </div>
-        )
-    }
-
     handleSubmit (e) {
         e.preventDefault();
-        const user = {email: this.state.email, password: this.state.password};
-        if (Object.values(user).every(stateField => stateField !== "")) {
-            this.props.processForm(user);
-            this.setState({
-                email: '',
-                password: '',
-            });
-        } else {
-            this.setState({ errors: 'errors' });
-        }
+        this.props.processForm(this.state);
+        this.setState({
+            email: '',
+            password: '',
+        });
     }
 
     update (field) {
@@ -42,6 +24,22 @@ class LoginForm extends React.Component {
     }
 
     render () {
+        let errorsClass;
+        let errorsMessage;
+
+        if (this.props.errors[0] === 'login') {
+            errorsClass = "errors";
+            errorsMessage = (
+                <div className="errors-box" id="login-errors-box">
+                    <div className="login-arrow-right"></div>
+                    <ul className="login-errors-message">
+                        {this.props.errors.slice(1).map(error => {
+                            return <li>{error}</li>
+                        })}
+                    </ul>
+                </div>
+            )
+        }
         return (
             <div className="login-header">
 
@@ -59,7 +57,7 @@ class LoginForm extends React.Component {
                                 type='email'
                                 value={this.state.email}
                                 onChange={this.update('email')}
-                                className={`login-email ${this.state.errors}`}
+                                className={`login-email ${errorsClass}`}
                             />
                         </div>
                         <div className="login-nav-form-password">
@@ -71,7 +69,7 @@ class LoginForm extends React.Component {
                                 type='password'
                                 value={this.state.password}
                                 onChange={this.update('password')}
-                                className={`login-password ${this.state.errors}`}
+                                className={`login-password ${errorsClass}`}
                             />
                         </div>
                         <div className="login-nav-form-button">
@@ -81,7 +79,7 @@ class LoginForm extends React.Component {
                                 className="login_button"
                             />
                         </div>
-                        {this.renderErrors()}
+                        {errorsMessage}
                     </form>
 
                 </nav>

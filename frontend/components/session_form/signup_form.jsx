@@ -11,24 +11,9 @@ class SignupForm extends React.Component {
             month: '',
             day: '',
             year: '',
-            gender: '',
-            errors: ''
+            gender: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-
-    renderErrors () {
-        if (this.state.errors === "") return null;
-        return (
-            <div className="errors-box" id="signup-errors-box">
-                <div className="signup-arrow-right"></div>
-                <p className="signup-errors-message">
-                    Fill out all blanks or try a different
-                    email/password.
-                </p>
-            </div>
-        )
     }
 
     handleSubmit (e) {
@@ -42,21 +27,17 @@ class SignupForm extends React.Component {
             birthday: birthday,
             gender: this.state.gender
         }
-        if (Object.values(user).every(stateField => stateField !== "")) {
-            this.props.processForm(user);
-            this.setState({
-                firstName: '',
-                surname: '',
-                email: '',
-                password: '',
-                month: '',
-                day: '',
-                year: '',
-                gender: ''
-            });
-        } else {
-            this.setState({ errors: 'errors'});
-        }
+        this.props.processForm(user);
+        this.setState({
+            firstName: '',
+            surname: '',
+            email: '',
+            password: '',
+            month: '',
+            day: '',
+            year: '',
+            gender: ''
+        });
     }
 
     update (field) {
@@ -70,6 +51,21 @@ class SignupForm extends React.Component {
     }
 
     render () {
+        let errorsClass;
+        let errorsMessage;
+        if (this.props.errors[0] === 'signup') {
+            errorsClass ="errors";
+            errorsMessage = (
+                <div className="errors-box" id="signup-errors-box">
+                    <div className="signup-arrow-right"></div>
+                    <ul className="signup-errors-message">
+                        {this.props.errors.slice(1).map(error => {
+                            return <li>{error}</li>
+                        })}
+                    </ul>
+                </div>
+            )
+        }
         return (
             <div className="signup-main">
 
@@ -89,14 +85,14 @@ class SignupForm extends React.Component {
                             <div className="signup-main-form-name">
                                 <input
                                     type="text"
-                                    className={`signup-name-input ${this.state.errors}`}
+                                    className={`signup-name-input ${errorsClass}`}
                                     placeholder="First name"
                                     onChange={this.update("firstName")}
                                     value={this.state.firstName}
                                 />
                                 <input
                                     type="text"
-                                    className={`signup-name-input ${this.state.errors}`}
+                                    className={`signup-name-input ${errorsClass}`}
                                     placeholder="Surname"
                                     onChange={this.update("surname")}
                                     value={this.state.surname}
@@ -109,7 +105,7 @@ class SignupForm extends React.Component {
                                     value={this.state.email}
                                     placeholder="Email address"
                                     onChange={this.update('email')}
-                                    className={this.state.errors}
+                                    className={errorsClass}
                                 />
                             </div>
 
@@ -119,7 +115,7 @@ class SignupForm extends React.Component {
                                     value={this.state.password}
                                     placeholder="New password"
                                     onChange={this.update('password')}
-                                    className={this.state.errors}
+                                    className={errorsClass}
                                 />
                             </div>
 
@@ -299,7 +295,7 @@ class SignupForm extends React.Component {
                         <div className="signup-main-form-gender">
                             <h2>Gender</h2>
                             <div className="gender-inputs">
-                                <div className={`gender-female ${this.state.errors}`}>
+                                <div className={`gender-female ${errorsClass}`}>
                                     <input
                                         type="radio"
                                         id="female"
@@ -308,7 +304,7 @@ class SignupForm extends React.Component {
                                     />
                                     <label htmlFor="female">Female</label>
                                 </div>
-                                <div className={`gender-male ${this.state.errors}`}>
+                                <div className={`gender-male ${errorsClass}`}>
                                     <input
                                         type="radio"
                                         id="male"
@@ -330,7 +326,7 @@ class SignupForm extends React.Component {
                         
                     </form>
                     
-                    {this.renderErrors()}
+                    {errorsMessage}
 
                 </div>
 
