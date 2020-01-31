@@ -6,13 +6,15 @@
 
 .profile_nav_list {
     float: right;
-    margin-right: 100px;
+    margin-right: 200px;
 }
 
 .profile_nav_list > li {
     float: left;
     border-left: .2px solid lightgrey;
     border-right: .2px solid lightgrey;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .profile_nav_list > li > a {

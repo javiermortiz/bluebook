@@ -1,0 +1,28 @@
+.details-container {
+    background-color: white;
+    width: 350px;
+    margin-left: 50px;
+    margin-top: 20px;
+    height: 350px;
+}
+
+.details-container > h3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 320px;
+    margin: auto;
+    border-bottom: 1px solid lightgray;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.details-list {
+    width: 320px;
+    margin: auto;
+}
+
+.details-list > li {
+    list-style: none;
+    padding-top: 15px;
+    font-size: 13px;
+}
