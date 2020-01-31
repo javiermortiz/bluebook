@@ -71,6 +71,8 @@ class SignupForm extends React.Component {
 
                 <div className="signup-main-message">
                     <h3>Bluebook helps you connect and share with the people in your life.</h3>
+                    <div className="world-container">
+                    </div>
                 </div>
 
                 <div className="signup-main-form">

@@ -1,0 +1,31 @@
+.pic-container {
+    width: 1000px;
+    margin-left: 50px;
+    position: relative;
+}
+
+.cover-pic {
+    object-fit: cover;
+    width: 1000px;
+    height: 350px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border: 4px solid white;
+    position: absolute;
+    left: 20px;
+    top: 210px;
+}
+
+.pic-container > h1 {
+    position: absolute;
+    bottom: 15px;
+    left: 205px;
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+}

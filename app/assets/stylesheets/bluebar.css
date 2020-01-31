@@ -71,6 +71,7 @@
     background-color: white;
     top: 60px;
     right: 6px;
+    z-index: 1;
 }
 
 #dropdown > li {

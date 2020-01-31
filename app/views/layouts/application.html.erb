@@ -7,6 +7,14 @@
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <% if logged_in? %>
+      <script type="text/javascript">
+        window.sulleyCoverURL = "<%= image_url('sulley_cover.jpg') %>"
+        window.sulleyProfileURL = "<%= image_url('sulley_profile.jpg') %>"
+        window.squirtleCoverURL = "<%= image_url('squirtle_cover.png') %>"
+        window.squirtleProfileURL = "<%= image_url('squirtle_profile.jpg') %>"
+      </script>
+    <% end %>
   </head>
 
   <body>
