@@ -1,0 +1,17 @@
+.timeline {
+    background-color: white;
+    width: 625px;
+    border-radius: 5px;
+}
+
+.timeline-list {
+    width: 600px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.timeline-list li {
+    padding: 10px;
+    list-style: none;
+    border-bottom: 1px solid lightgray;
+}

@@ -29,3 +29,11 @@
     font-size: 25px;
     font-weight: 400;
 }
+
+.details-timeline {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    margin-left: 50px;
+    margin-top: 15px;
+}
