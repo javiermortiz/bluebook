@@ -2,6 +2,8 @@
     background-color: white;
     width: 1000px;
     margin-left: 50px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .profile_nav_list {

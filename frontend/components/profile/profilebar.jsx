@@ -17,7 +17,7 @@ class Profilebar extends React.Component {
         return (
             <nav className="profile_nav group">
                 <ul className="profile_nav_list group">
-                    <li><Link to='/'>Timeline</Link></li>
+                    <li><Link to={`/${currentUser.id}`}>Timeline</Link></li>
                     <li><Link to=''>About</Link></li>
                     <li><Link to=''>Friends</Link></li>
                     <li><Link to=''>Photos</Link></li>

@@ -19,10 +19,15 @@ class Bluebar extends React.Component {
 
                 <nav className="bluebar_nav group">
 
-                    <h1 className="bluebar_nav_logo"><Link to={`/newsfeed/${currentUser.id}`}>b</Link></h1>
+                    <h1 className="bluebar_nav_logo"><Link to={`/`}>b</Link></h1>
 
                     <ul className="bluebar_nav_list group">
-                        <li><Link to={`/profile/${currentUser.id}`}>{currentUser.first_name}</Link></li>
+                        <li>
+                            <Link to={`/${currentUser.id}`}>
+                                <img className="thumbnail" src={currentUser.profileUrl} />
+                                {currentUser.first_name}
+                            </Link>
+                        </li>
                         <li><button onClick={this.openDropdown}>&#9662;</button></li>
                     </ul>
                     {

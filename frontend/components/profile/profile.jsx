@@ -1,5 +1,5 @@
 import React from 'react';
-import Bluebar from '../logged_in/bluebar';
+import BluebarContainer from '../logged_in/bluebar_container';
 import Profilebar from '../profile/profilebar';
 import ProfilePics from './profile_pics';
 import Details from './details';
@@ -9,14 +9,21 @@ class Profile extends React.Component {
         super(props)
     }
 
-    render () {
+    componentDidMount () {
+        this.props.fetchUser(this.props.match.params.userId);
+    }
 
+    render () {
+        debugger
+        if (typeof this.props.user === 'undefined') {
+            return <h1>Fetching user info...</h1>
+        }
         return (
             <div>
-                <Bluebar currentUser={this.props.currentUser} logout={this.props.logout} />
-                <ProfilePics currentUser={this.props.currentUser}/>
-                <Profilebar currentUser={this.props.currentUser} />
-                <Details currentUser={this.props.currentUser} />
+                <BluebarContainer />
+                <ProfilePics currentUser={this.props.user}/>
+                <Profilebar currentUser={this.props.user} />
+                <Details currentUser={this.props.user} />
             </div>
         )
     }

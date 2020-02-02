@@ -14,8 +14,8 @@ class ProfilePics extends React.Component {
         const { currentUser } = this.props;
         return (
             <div className="pic-container">
-                <img className="cover-pic" src={window.squirtleCoverURL} />
-                <img className="profile-pic" src={window.squirtleProfileURL} />
+                <img className="cover-pic" src={currentUser.coverUrl} />
+                <img className="profile-pic" src={currentUser.profileUrl} />
                 <h1>{`${this.capitalize(currentUser.first_name)} ${this.capitalize(currentUser.surname)}`}</h1>
             </div>
         )

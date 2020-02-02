@@ -3,6 +3,19 @@ class User < ApplicationRecord
     validates :email, uniqueness: true 
     validates :password, length: { minimum: 6, allow_nil: true }
 
+    has_one_attached :profile_pic
+    has_one_attached :cover_pic
+
+    has_many :authored_posts,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: 'Post'
+
+    has_many :received_posts,
+        primary_key: :id,
+        foreign_key: :for_user_id,
+        class_name: 'Post'
+
     attr_reader :password
 
     after_initialize :ensure_session_token 

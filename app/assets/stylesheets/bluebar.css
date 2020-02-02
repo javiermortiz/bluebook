@@ -39,8 +39,7 @@
 
 .bluebar_nav_list > li > a {
     color: white;
-    padding: 10px 15px;
-    display: block;
+    padding: 5px;
 }
 
 .bluebar_nav_list > li > a:hover {
@@ -92,86 +91,15 @@
     background-color: #3b5998;
     color: white;
 }
-/* .logo {
-    flex: left;
-    background-color: white;
-    color: #3b5998;
-    margin-left: 25px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    height: 30px;
+
+.bluebar_nav_list > li:first-child {
+    padding-right: 10px;
+}
+
+.thumbnail {
+    border-radius: 50%;
     width: 25px;
-    border-radius: 5px;
-    font-size: 25px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 700;
-    text-align: right;
-}
-.bluebar a {
-    text-decoration: none;
-}
-
-.bluebar_navbar {
-    flex: right;
-}
-
-.bluebar_navbar ul {
-    display: flex;
-    list-style-type: none;
-    margin-right: 300px;
-    width: 50%;
-}
-
-.bluebar_navbar ul li {
-    flex: space-evenly;
-    margin-right: 10px;
-    text-align: center;
-}
-
-.bluebar_navbar a {
-    color: white;
-    text-decoration: none;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-    display: inline-block;
-    width: 50px;
     height: 25px;
-    margin-bottom: -10px;
-    text-align: center;
-    border-right: .5px solid darkgray;
-    padding-right: 5px;
+    object-fit: cover;
+    padding-right: 7px;
 }
-
-.bluebar_navbar a:hover {
-    background-color: #1b3468;
-}
-
-#dropdown {
-    position: absolute;
-    top: 65px;
-    left: 762px;
-    width: 200px;
-    box-shadow: 1px 1px 5px #888888;
-    background-color: white;
-    display: table;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
-}
-
-#dropdown button {
-    padding: 0;
-    background: none;
-    border: none;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-    width: 100%
-}
-
-#dropdown li {
-    display: table-cell;
-    border: .5px solid lightgrey;
-    border-radius: 3px;
-} */

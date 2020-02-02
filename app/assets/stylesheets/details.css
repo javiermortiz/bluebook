@@ -3,12 +3,12 @@
     width: 350px;
     margin-left: 50px;
     margin-top: 20px;
-    height: 350px;
+    border-radius: 5px;
 }
 
 .details-container > h3 {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     width: 320px;
     margin: auto;
     border-bottom: 1px solid lightgray;
@@ -25,4 +25,8 @@
     list-style: none;
     padding-top: 15px;
     font-size: 13px;
+}
+
+.details-list > li:last-child {
+    padding-bottom: 15px;
 }
