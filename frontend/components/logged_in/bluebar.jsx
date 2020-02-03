@@ -32,11 +32,16 @@ class Bluebar extends React.Component {
                     </ul>
                     {
                         this.state.dropdownOpen && 
-                        <ul id="dropdown">
-                            <li>
-                                <button onClick={logout}>Log out</button>
-                            </li>
-                        </ul>
+                        (
+                        <div id="dropdown">
+                            <div className="bluebar-up-arrow"></div>
+                            <ul className="dropdown-list">
+                                <li>
+                                    <button onClick={logout}>Log out</button>
+                                </li>
+                            </ul>
+                        </div>
+                        )
                     }
                 </nav>
             </header>
