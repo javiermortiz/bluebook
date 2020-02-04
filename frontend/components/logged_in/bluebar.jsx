@@ -23,7 +23,7 @@ class Bluebar extends React.Component {
 
                     <ul className="bluebar_nav_list group">
                         <li>
-                            <Link to={`/${currentUser.id}`}>
+                            <Link to={`/`}>
                                 <img className="thumbnail" src={currentUser.profileUrl} />
                                 {currentUser.first_name}
                             </Link>
