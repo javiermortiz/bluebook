@@ -2,6 +2,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 import React from 'react';
+import {makeRequest, fetchRequests, deleteRequest} from './util/requests_api_util'
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;

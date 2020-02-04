@@ -6,6 +6,33 @@ class User < ApplicationRecord
     has_one_attached :profile_pic
     has_one_attached :cover_pic
 
+    has_many :initiated_requests,
+        class_name: 'FriendshipRequest',
+        primary_key: :id,
+        foreign_key: :started_by_user_id
+
+    has_many :requests_to_approve,
+        class_name: 'FriendshipRequest',
+        primary_key: :id,
+        foreign_key: :waiting_for_user_id
+        
+    has_many :initiated_requests_with,
+        through: :initiated_requests,
+        source: :friendship_validator
+
+    has_many :requests_to_approve_from,
+        through: :requests_to_approve,
+        source: :friendship_initiator
+
+    has_many :friendships,
+        class_name: 'Friendship',
+        primary_key: :id,
+        foreign_key: :user_id 
+
+    has_many :friends,
+        through: :friendships,
+        source: :other_friend
+    
     has_many :authored_posts,
         primary_key: :id,
         foreign_key: :author_id,

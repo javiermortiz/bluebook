@@ -1,0 +1,1 @@
+json.extract! @friendship_request, :id, :status, :started_by_user_id, :waiting_for_user_id

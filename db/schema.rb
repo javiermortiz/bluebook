@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_04_005542) do
+ActiveRecord::Schema.define(version: 2020_02_04_174726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,6 @@ ActiveRecord::Schema.define(version: 2020_02_04_005542) do
     t.integer "waiting_for_user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["started_by_user_id"], name: "index_friendship_requests_on_started_by_user_id", unique: true
-    t.index ["waiting_for_user_id"], name: "index_friendship_requests_on_waiting_for_user_id", unique: true
   end
 
   create_table "friendships", force: :cascade do |t|
@@ -51,8 +49,6 @@ ActiveRecord::Schema.define(version: 2020_02_04_005542) do
     t.integer "friends_with_user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["friends_with_user_id"], name: "index_friendships_on_friends_with_user_id", unique: true
-    t.index ["user_id"], name: "index_friendships_on_user_id", unique: true
   end
 
   create_table "posts", force: :cascade do |t|
