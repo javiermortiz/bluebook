@@ -14,6 +14,10 @@ class Bluebar extends React.Component {
 
     render () {
         const { currentUser, logout } = this.props;
+        let profileUrl = window.profileURL;
+        if (currentUser.profileUrl) {
+            profileUrl = currentUser.profileUrl
+        }
         return (
             <header className="bluebar">
 
@@ -23,8 +27,8 @@ class Bluebar extends React.Component {
 
                     <ul className="bluebar_nav_list group">
                         <li>
-                            <Link to={`/`}>
-                                <img className="thumbnail" src={currentUser.profileUrl} />
+                            <Link to={`/${currentUser.id}`}>
+                                <img className="thumbnail" src={profileUrl} />
                                 {currentUser.first_name}
                             </Link>
                         </li>

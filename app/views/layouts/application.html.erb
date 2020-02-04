@@ -9,10 +9,8 @@
     <%= javascript_include_tag 'application' %>
     <% if logged_in? %>
       <script type="text/javascript">
-        window.sulleyCoverURL = "<%= image_url('sulley_cover.jpg') %>"
-        window.sulleyProfileURL = "<%= image_url('sulley_profile.jpg') %>"
-        window.squirtleCoverURL = "<%= image_url('squirtle_cover.png') %>"
-        window.squirtleProfileURL = "<%= image_url('squirtle_profile.jpg') %>"
+        window.coverURL = "<%= image_url('default_cover.jpg') %>"
+        window.profileURL = "<%= image_url('default_profile.png') %>"
       </script>
     <% end %>
   </head>

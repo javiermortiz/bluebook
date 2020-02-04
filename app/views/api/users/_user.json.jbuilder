@@ -1,6 +1,11 @@
 json.extract! user, :id, :first_name, :surname, :email, :birthday, :gender
-json.profileUrl url_for(user.profile_pic)
-json.coverUrl url_for(user.cover_pic)
+if user.profile_pic.attached?
+    json.profileUrl url_for(user.profile_pic)
+    
+end 
+if user.cover_pic.attached?
+    json.coverUrl url_for(user.cover_pic)
+end
 json.authoredPosts user.authored_posts.ids
 json.receivedPosts user.received_posts.ids 
 json.friends_with user.friends.ids 
