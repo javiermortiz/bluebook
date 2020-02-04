@@ -28,16 +28,16 @@ class SignupForm extends React.Component {
             gender: this.state.gender
         }
         this.props.processForm(user);
-        this.setState({
-            firstName: '',
-            surname: '',
-            email: '',
-            password: '',
-            month: '',
-            day: '',
-            year: '',
-            gender: ''
-        });
+        // this.setState({
+        //     firstName: '',
+        //     surname: '',
+        //     email: '',
+        //     password: '',
+        //     month: '',
+        //     day: '',
+        //     year: '',
+        //     gender: ''
+        // });
     }
 
     update (field) {

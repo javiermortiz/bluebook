@@ -13,10 +13,10 @@ class LoginForm extends React.Component {
     handleSubmit (e) {
         e.preventDefault();
         this.props.processForm(this.state);
-        this.setState({
-            email: '',
-            password: '',
-        });
+        // this.setState({
+        //     email: '',
+        //     password: '',
+        // });
     }
 
     update (field) {
