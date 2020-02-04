@@ -14,6 +14,13 @@ class Profile extends React.Component {
         this.props.fetchUser(this.props.match.params.userId);
     }
 
+    componentDidUpdate (prevProps) {
+        const userId = this.props.match.params.userId
+        if (prevProps.match.params.userId !== userId){
+            this.props.fetchUser(userId);
+        }
+    }
+
     render () {
         if (typeof this.props.user === 'undefined') {
             return <h1>Fetching user info...</h1>
