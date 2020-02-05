@@ -29,7 +29,7 @@ class Bluebar extends React.Component {
                         <li>
                             <Link to={`/${currentUser.id}`}>
                                 <img className="thumbnail" src={profileUrl} />
-                                {currentUser.first_name}
+                                <div className="current-user">{currentUser.first_name}</div>
                             </Link>
                         </li>
                         <li><button onClick={this.openDropdown}>&#9662;</button></li>

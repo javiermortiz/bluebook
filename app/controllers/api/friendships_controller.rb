@@ -16,6 +16,8 @@ class Api::FriendshipsController < ApplicationController
     def destroy
         @friendship = Friendship.find(params[:id])
         if @friendship.destroy
+            @user1 = User.find(@friendship.user_id)
+            @user2 = User.find(@friendship.friends_with_user_id)
             render :show
         else  
             render json: @friendship.errors.full_messages, status: 401

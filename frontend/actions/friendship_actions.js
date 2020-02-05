@@ -8,9 +8,10 @@ const confirmFriendship = friendship => ({
     friendship 
 })
 
-const cancelFriendship = friendshipId => ({
+const cancelFriendship = payload => ({
     type: CANCEL_FRIENDSHIP,
-    friendshipId
+    friendship: payload.friendship,
+    users: payload.users
 })
 
 export const createFriendship = friendship => dispatch => {
@@ -20,5 +21,5 @@ export const createFriendship = friendship => dispatch => {
 
 export const deleteFriendship = friendshipId => dispatch => {
     return FriendshipAPIUtil.deleteFriendship(friendshipId)
-        .then(() => dispatch(cancelFriendship(friendshipId)));
+        .then(receivedFriendship => dispatch(cancelFriendship(receivedFriendship)));
 };

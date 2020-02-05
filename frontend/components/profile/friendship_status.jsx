@@ -18,7 +18,7 @@ class FriendshipStatus extends React.Component {
             waiting_for_user_id: this.props.currentProfile
         }
         this.props.makeRequest(request);
-        this.props.fetchUser(this.props.currentUser.id);
+        // this.props.fetchUser(this.props.currentUser.id);
     }
 
     deleteRequest () {
@@ -30,7 +30,7 @@ class FriendshipStatus extends React.Component {
             currentRequest = this.props.requestsToApprove[this.props.currentProfile];
             this.props.cancelRequest(currentRequest.id);
         }
-        this.props.fetchUser(this.props.currentUser.id);
+        // this.props.fetchUser(this.props.currentUser.id);
     }
 
     handleDelete (e) {
@@ -58,15 +58,16 @@ class FriendshipStatus extends React.Component {
         const friendshipRepeatedId = this.props.friendshipsRepeated[this.props.currentProfile].id; 
         this.props.deleteFriendship(friendshipId);
         this.props.deleteFriendship(friendshipRepeatedId);
-        this.props.fetchUser(this.props.currentUser.id);
+        // this.props.fetchUser(this.props.currentUser.id);
     }
 
     render () {
         if (this.props.friendsWith.includes(this.props.currentProfile)) {
             return (
-                <div>
-                    <button>Friends</button>
-                    <ul>
+                <div className="friend-status">
+                    <button className="friend-status-button">Friends</button>
+                    <div className="friend-status-up-arrow"></div>
+                    <ul className="friend-status-list">
                         <li><button onClick={this.handleUnfriend}>Unfriend</button></li>
                     </ul>
                 </div>
@@ -75,25 +76,31 @@ class FriendshipStatus extends React.Component {
             return null;
         } else if (this.props.initiatedRequestsWith.includes(this.props.currentProfile)) {
             return (
-                <div>
-                    <button>Friend Request Sent</button>
-                    <ul>
+                <div className="friend-status">
+                    <button className="friend-status-button">Friend Request Sent</button>
+                    <div className="friend-status-up-arrow"></div>
+                    <ul className="friend-status-list">
                         <li><button onClick={this.handleDelete}>Cancel Request</button></li>
                     </ul>
                 </div>
             )
         } else if (this.props.requestsToApproveFrom.includes(this.props.currentProfile)){
             return (
-                <div>
-                    <button>Respond to Friend Request</button>
-                    <ul>
+                <div className="friend-status">
+                    <button className="friend-status-button">Respond to Friend Request</button>
+                    <div className="friend-status-up-arrow"></div>
+                    <ul className="friend-status-list">
                         <li><button onClick={this.handleConfirm}>Confirm</button></li>
                         <li><button onClick={this.handleDelete}>Delete Request</button></li>
                     </ul>
                 </div>
             )
         } else {
-            return <button onClick={this.handleAdd}>Add Friend</button>;
+            return (
+                <div className='friend-status'>
+                    <button className="friend-status-button" onClick={this.handleAdd}>Add Friend</button>
+                </div>
+            )
         }
     }
 }

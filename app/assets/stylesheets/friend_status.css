@@ -1,0 +1,68 @@
+.friend-status {
+    position: absolute;
+    bottom: 235px;
+    right: 300px;
+    height: 50px;
+}
+
+.friend-status-button {
+    background-color: rgb(243, 243, 243);
+    padding: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.friend-status-button:hover {
+    background-color: rgb(221, 220, 220)
+}
+
+.friend-status-list {
+    display: none;
+    position: absolute;
+    top: 45px;
+    width: 180px;
+    list-style: none;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.friend-status-list > li {
+    height: 20px;
+    border-bottom: .5px solid lightgray;
+}
+
+.friend-status:hover .friend-status-list {
+    display: block;
+}
+
+.friend-status-list > li > button {
+    width: 100%;
+    height: 80%;
+    border-style: none;
+    background-color: white;
+    margin: auto;
+    font-size: 12px;
+}
+
+.friend-status-list > li > button:hover {
+    background-color: #3b5998;
+    color: white;
+}
+
+.friend-status-up-arrow {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  z-index: 1;
+  display: none;
+  position: absolute;
+}
+
+.friend-status:hover .friend-status-up-arrow {
+    display: block;
+}

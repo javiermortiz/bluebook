@@ -27,7 +27,7 @@ class Profile extends React.Component {
             return <h1>Fetching user info...</h1>
         }
         return (
-            <div>
+            <div className="profile-container">
                 <BluebarContainer />
                 <ProfilePics currentUser={this.props.user}/>
                 <FriendshipStatusContainer currentProfile={this.props.user.id}/>

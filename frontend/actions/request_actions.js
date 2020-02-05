@@ -3,14 +3,16 @@ import * as RequestAPIUtil from '../util/requests_api_util';
 export const RECEIVE_REQUEST = "RECEIVE_REQUEST";
 export const DELETE_REQUEST = "DELETE_REQUEST";
 
-const receiveRequest = request => ({
+const receiveRequest = payload => ({
     type: RECEIVE_REQUEST,
-    request
+    request: payload.request,
+    users: payload.users
 });
 
-const deleteRequest = request => ({
+const deleteRequest = payload => ({
     type: DELETE_REQUEST,
-    request
+    request: payload.request,
+    users: payload.users
 });
 
 export const makeRequest = request => dispatch => (
