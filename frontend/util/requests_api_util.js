@@ -19,7 +19,3 @@ export const deleteRequest = requestId => {
         url: `/api/friendship_requests/${requestId}`
     })
 }
-
-window.makeRequest = makeRequest;
-window.fetchRequests = fetchRequests;
-window.deleteRequest = deleteRequest;

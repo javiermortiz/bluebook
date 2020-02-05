@@ -14,7 +14,6 @@ class ProfilePics extends React.Component {
         const { currentUser } = this.props;
         let coverUrl = window.coverURL;
         let profileUrl = window.profileURL;
-        console.log(coverUrl)
         if (currentUser.coverUrl) {
             coverUrl = currentUser.coverUrl; 
         } 

@@ -29,6 +29,11 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :user_id 
 
+    has_many :friendships_repeated,
+        class_name: 'Friendship',
+        primary_key: :id,
+        foreign_key: :friends_with_user_id
+
     has_many :friends,
         through: :friendships,
         source: :other_friend

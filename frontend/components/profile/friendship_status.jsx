@@ -3,12 +3,14 @@ import React from 'react';
 class FriendshipStatus extends React.Component {
     constructor (props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
-        this.state = {};
+        this.handleAdd = this.handleAdd.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleConfirm = this.handleConfirm.bind(this);
+        this.deleteRequest = this.deleteRequest.bind(this);
+        this.handleUnfriend = this.handleUnfriend.bind(this);
     }
 
-    handleClick (e) {
-        debugger
+    handleAdd (e) {
         e.preventDefault();
         const request = {
             status: "pending",
@@ -16,20 +18,82 @@ class FriendshipStatus extends React.Component {
             waiting_for_user_id: this.props.currentProfile
         }
         this.props.makeRequest(request);
-        this.setState({});
+        this.props.fetchUser(this.props.currentUser.id);
+    }
+
+    deleteRequest () {
+        let currentRequest;
+        if (this.props.initiatedRequestsWith.includes(this.props.currentProfile)) {
+            currentRequest = this.props.initiatedRequests[this.props.currentProfile];
+            this.props.cancelRequest(currentRequest.id);
+        } else {
+            currentRequest = this.props.requestsToApprove[this.props.currentProfile];
+            this.props.cancelRequest(currentRequest.id);
+        }
+        this.props.fetchUser(this.props.currentUser.id);
+    }
+
+    handleDelete (e) {
+        e.preventDefault();
+        this.deleteRequest();
+    }
+
+    handleConfirm (e) {
+        e.preventDefault();
+        const newFriendship1 = {
+            user_id: this.props.currentUser.id,
+            friends_with_user_id: this.props.currentProfile
+        };
+        const newFriendship2 = {
+            user_id: this.props.currentProfile, 
+            friends_with_user_id: this.props.currentUser.id
+        }
+        this.props.confirmFriendship(newFriendship1);
+        this.props.confirmFriendship(newFriendship2);
+        this.deleteRequest();
+    }
+
+    handleUnfriend () {
+        const friendshipId = this.props.friendships[this.props.currentProfile].id;
+        const friendshipRepeatedId = this.props.friendshipsRepeated[this.props.currentProfile].id; 
+        this.props.deleteFriendship(friendshipId);
+        this.props.deleteFriendship(friendshipRepeatedId);
+        this.props.fetchUser(this.props.currentUser.id);
     }
 
     render () {
         if (this.props.friendsWith.includes(this.props.currentProfile)) {
-            return <h1>Friends</h1>
+            return (
+                <div>
+                    <button>Friends</button>
+                    <ul>
+                        <li><button onClick={this.handleUnfriend}>Unfriend</button></li>
+                    </ul>
+                </div>
+            )
         } else if (this.props.currentProfile === this.props.currentUser.id) {
-            return <h1>This is you</h1>
+            return null;
         } else if (this.props.initiatedRequestsWith.includes(this.props.currentProfile)) {
-            return <h1>Waiting for approval</h1>
+            return (
+                <div>
+                    <button>Friend Request Sent</button>
+                    <ul>
+                        <li><button onClick={this.handleDelete}>Cancel Request</button></li>
+                    </ul>
+                </div>
+            )
         } else if (this.props.requestsToApproveFrom.includes(this.props.currentProfile)){
-            return <h1>Approve friendship</h1>
+            return (
+                <div>
+                    <button>Respond to Friend Request</button>
+                    <ul>
+                        <li><button onClick={this.handleConfirm}>Confirm</button></li>
+                        <li><button onClick={this.handleDelete}>Delete Request</button></li>
+                    </ul>
+                </div>
+            )
         } else {
-            return <button onClick={this.handleClick}>Add Friend</button>;
+            return <button onClick={this.handleAdd}>Add Friend</button>;
         }
     }
 }
