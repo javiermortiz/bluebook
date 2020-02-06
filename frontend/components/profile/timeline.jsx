@@ -6,8 +6,15 @@ class Timeline extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts();
+        this.props.fetchPosts(this.props.user.id);
     };
+
+    componentDidUpdate(prevProps) {
+        const userId = this.props.currentUser.id
+        if (prevProps.currentUser.id !== userId) {
+            this.props.fetchPosts(userId);
+        }
+    }
 
     render() {
         if (this.props.posts === undefined) {

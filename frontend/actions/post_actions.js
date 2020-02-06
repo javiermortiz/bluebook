@@ -7,11 +7,9 @@ const receivePosts = posts => ({
     posts 
 });
 
-export const fetchPosts = () => dispatch => (
-    PostAPIUtil.fetchPosts()
+export const fetchUserPosts = userId => dispatch => (
+    PostAPIUtil.fetchUserPosts(userId)
         .then(posts => {
             return dispatch(receivePosts(posts))
         })
 );
-
-window.fetchPosts = fetchPosts;
