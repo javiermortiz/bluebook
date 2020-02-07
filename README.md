@@ -17,3 +17,4 @@ The front end of the site was built with [React](https://reactjs.org/) along wit
 ### Friend Request
 <img width="353" alt="bluebook-request" src="https://user-images.githubusercontent.com/19655779/74054430-ea1c5680-4992-11ea-80b6-41e13b99601c.png">
 ### Posts
+<img width="1261" alt="bluebook-posts" src="https://user-images.githubusercontent.com/19655779/74054517-10da8d00-4993-11ea-9098-5b52f559fa9c.png">
