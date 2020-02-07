@@ -12,9 +12,12 @@ The front end of the site was built with [React](https://reactjs.org/) along wit
 ## Site
 ### Landing Page
 <img width="1280" alt="bluebook-homepage" src="https://user-images.githubusercontent.com/19655779/74054205-6bbfb480-4992-11ea-8988-84b880d17f08.png">
+
 ### Profile
 <img width="1264" alt="bluebook-profile" src="https://user-images.githubusercontent.com/19655779/74054336-b17c7d00-4992-11ea-906d-4d991ceafcbf.png">
+
 ### Friend Request
 <img width="353" alt="bluebook-request" src="https://user-images.githubusercontent.com/19655779/74054430-ea1c5680-4992-11ea-80b6-41e13b99601c.png">
+
 ### Posts
 <img width="1261" alt="bluebook-posts" src="https://user-images.githubusercontent.com/19655779/74054517-10da8d00-4993-11ea-9098-5b52f559fa9c.png">
