@@ -98,8 +98,11 @@
 }
 
 .post-header-name {
-    color: #3b5998;
     margin-bottom: 2px;
+}
+
+.post-header-name > a {
+    color: #3b5998;
 }
 
 .post-header-date {

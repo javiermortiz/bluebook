@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Posts extends React.Component {
     constructor(props) {
@@ -42,7 +43,7 @@ class Posts extends React.Component {
                             
                                 <div className="post-header-details">
                                     <div className="post-header-name">
-                                        {`${post.author.first_name} ${post.author.surname}`}
+                                        <Link to={`/${post.author_id}`}>{`${post.author.first_name} ${post.author.surname}`}</Link>
                                     </div>
                                     <div className="post-header-date">
                                         {
