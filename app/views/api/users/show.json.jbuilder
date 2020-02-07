@@ -18,6 +18,13 @@ json.initiated_requests do
     end 
 end 
 json.requests_to_approve_from @user.requests_to_approve_from.ids 
+json.requesters do 
+    @user.requests_to_approve_from.each do |requester|
+        json.set! requester.id do 
+            json.extract! requester, :id, :first_name, :surname
+        end 
+    end
+end 
 json.requests_to_approve  do
     @user.requests_to_approve.each do |request|
         json.set! request.started_by_user_id do 
@@ -36,6 +43,16 @@ json.friendships_repeated do
     @user.friendships_repeated.each do |friendship|
         json.set! friendship.user_id do 
             json.extract! friendship, :id, :user_id, :friends_with_user_id
+        end 
+    end 
+end 
+json.friends do 
+    @user.friends.each do |friend|
+        json.set! friend.id do 
+            json.extract! friend, :id, :first_name, :surname
+            if friend.profile_pic.attached?
+                json.profileUrl url_for(friend.profile_pic) 
+            end 
         end 
     end 
 end 

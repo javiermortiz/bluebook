@@ -1,0 +1,42 @@
+.friends {
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+.friends-title {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    width: 320px;
+    margin: auto;
+    border-bottom: 1px solid lightgray;
+    font-size: 18px;
+}
+
+.friends-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.friends-list > li {
+}
+
+.friends-list > li > a {
+    color: #3b5998;
+    font-size: 12px;
+}
+
+.friend-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.friend-name {
+    margin-top: 5px;
+    margin-left: 5px;
+}

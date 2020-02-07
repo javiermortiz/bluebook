@@ -8,6 +8,12 @@ class LoginForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
+    }
+
+    demoLogin (e) {
+        e.preventDefault();
+        this.props.processForm({email: 'megamind@dreamworks.com', password: 'megamind'})
     }
 
     handleSubmit (e) {
@@ -79,9 +85,17 @@ class LoginForm extends React.Component {
                                 className="login_button"
                             />
                         </div>
+                        <div className="login-nav-form-button">
+                            <input
+                                type="submit"
+                                value="Demo Login"
+                                className="login_button"
+                                onClick={this.demoLogin}
+                            />
+                        </div>
                         {errorsMessage}
                     </form>
-
+                    
                 </nav>
 
             </div>

@@ -51,7 +51,7 @@
     background-color: #3b5998;
 }
 
-.bluebar_nav_list > li > button {
+.bluebar_nav_list > li:last-child > button {
     background-color: #3b5998;
     border: none;
     color: black;
@@ -75,6 +75,7 @@
 
 .dropdown-list {
     background-color: white;
+    border-radius: 5px;
 }
 
 .dropdown-list > li {
@@ -120,4 +121,66 @@
 
 .current-user {
     padding-top: 5px;
+}
+
+.friend-requests {
+
+}
+
+.friend-requests:hover {
+    background-color:  #203664;
+}
+
+.friend-requests > button {
+    color: white;
+    background: #3b5998;
+    border: none;
+    display: block;
+    font-size: 15px;
+    padding: 9px;
+    cursor: pointer;
+}
+
+#requests-dropdown {
+    position: absolute;
+    width: 300px;
+    top: 50px;
+    right: 48px;
+    z-index: 1;
+}
+
+.requests-dropdown-up-arrow {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  margin-left: 265px;
+  z-index: 1;
+}
+
+.requests-dropdown-list {
+    background: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.requests-dropdown-list > li {
+    color: gray;
+    padding: 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+.requests-dropdown-list > li:last-child {
+    border-bottom: none;
+}
+.requests-dropdown-list > li > a {
+    display: block;
+    color: #3b5998;
+    padding: 5px;
+}
+
+.requests-dropdown-list > li > a:hover {
+    color: white;
+    background-color: #3b5998;
 }

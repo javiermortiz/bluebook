@@ -4,12 +4,18 @@ import { Link } from 'react-router-dom';
 class Bluebar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {dropdownOpen: false};
+        this.state = {dropdownOpen: false, friendRequestsOpen: false};
         this.openDropdown = this.openDropdown.bind(this);
+        this.openFriendRequests = this.openFriendRequests.bind(this);
     }
 
     openDropdown () {
-        this.setState({dropdownOpen: !this.state.dropdownOpen});
+        this.setState({dropdownOpen: !this.state.dropdownOpen, friendRequestsOpen: false});
+
+    }
+
+    openFriendRequests () {
+        this.setState({friendRequestsOpen: !this.state.friendRequestsOpen, dropdownOpen: false});
     }
 
     render () {
@@ -32,6 +38,9 @@ class Bluebar extends React.Component {
                                 <div className="current-user">{currentUser.first_name}</div>
                             </Link>
                         </li>
+                        <li className="friend-requests">
+                            <button onClick={this.openFriendRequests}>Friend Requests</button>
+                        </li>
                         <li><button onClick={this.openDropdown}>&#9662;</button></li>
                     </ul>
                     {
@@ -45,6 +54,30 @@ class Bluebar extends React.Component {
                                 </li>
                             </ul>
                         </div>
+                        )
+                    }
+
+                    {
+                        this.state.friendRequestsOpen &&
+                        (
+                            <div id="requests-dropdown">
+                                <div className="requests-dropdown-up-arrow"></div>
+                                <ul className="requests-dropdown-list">
+                                        {
+                                            currentUser.requesters === undefined ?
+                                            <li>No new requests</li> :
+                                            Object.values(currentUser.requesters).map(requester => {
+                                                return (
+                                                    <li>
+                                                        <Link to={`/${requester.id}`}>
+                                                            {`${requester.first_name} ${requester.surname}`}
+                                                        </Link>
+                                                    </li>
+                                                )
+                                            })
+                                        }
+                                </ul>
+                            </div>
                         )
                     }
                 </nav>
