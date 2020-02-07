@@ -57,3 +57,7 @@ this.props.currentUser.id === post.author_id &&
     Delete
 </button>
 ```
+
+### Other info
++ The demo site is hosted on [Heroku](https://dashboard.heroku.com/).
++ The demo has full functionality to create new users and log in old ones. It also has a demo log in, where it takes you to an existing user account that already has some friends, friend requests, and posts to hightlight the different features of the site.
