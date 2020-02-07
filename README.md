@@ -13,6 +13,27 @@ The front end of the site was built with [React](https://reactjs.org/) along wit
 ### Landing Page
 <img width="1280" alt="bluebook-homepage" src="https://user-images.githubusercontent.com/19655779/74054205-6bbfb480-4992-11ea-8988-84b880d17f08.png">
 
+The main challenge with the landing page was rendering the errors and styling them. Since I didn't want multiple sources of truth for errors I had to tell the state what type of error I was getting. The solution I came up with was the following. In the signup and login action, once the ajax request had already returned, I unshifted the type of error to the errors array. Now in the component I could check for index 0 in the array as a condition for rendering the errors. Furthermore that created a new className that got chained to the input elements of the form in order to style them accordingly.
+
+```javascript
+let errorsClass;
+let errorsMessage;
+
+if (this.props.errors[0] === 'login') {
+  errorsClass = "errors";
+  errorsMessage = (
+    <div className="errors-box" id="login-errors-box">
+      <div className="login-arrow-right"></div>
+      <ul className="login-errors-message">
+        {this.props.errors.slice(1).map(error => {
+          return <li>{error}</li>
+        })}
+      </ul>
+    </div>
+  )
+}
+```
+
 ### Profile
 <img width="1264" alt="bluebook-profile" src="https://user-images.githubusercontent.com/19655779/74054336-b17c7d00-4992-11ea-906d-4d991ceafcbf.png">
 
