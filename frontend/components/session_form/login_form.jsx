@@ -88,7 +88,7 @@ class LoginForm extends React.Component {
                         <div className="login-nav-form-button">
                             <input
                                 type="submit"
-                                value="Demo Login"
+                                value="Demo log in"
                                 className="login_button"
                                 onClick={this.demoLogin}
                             />

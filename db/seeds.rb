@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 User.destroy_all
 Friendship.destroy_all
@@ -46,43 +47,60 @@ manhattan = User.create(
     birthday: '1938-09-1',
     gender: 'male'
 )
+
+megamind_profile = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/megamind_profile.jpg')
+
 megamind.profile_pic.attach(
-    io: File.open("/Users/ortiz-garcia/desktop/bluebook-images/megamind_profile.jpg"), 
+    io: megamind_profile, 
     filename: "megamind_profile.jpg"
 )
 
+megamind_cover = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/megamind_cover.jpg')
+
 megamind.cover_pic.attach(
-    io: File.open("/Users/ortiz-garcia/desktop/bluebook-images/megamind_cover.jpg"), 
+    io: megamind_cover, 
     filename: "megamind_cover.jpg"
 )
 
+squirtle_profile = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/squirtle_profile.jpg')
+
 squirtle.profile_pic.attach(
-    io: File.open("/Users/ortiz-garcia/desktop/bluebook-images/squirtle_profile.jpg"), 
+    io: squirtle_profile, 
     filename: "squirtle_profile.jpg"
 )
 
+squirtle_cover = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/squirtle_cover.png')
+
 squirtle.cover_pic.attach(
-    io: File.open("/Users/ortiz-garcia/desktop/bluebook-images/squirtle_cover.png"), 
+    io: squirtle_cover, 
     filename: "squirtle_cover.png"
 )
 
+sulley_profile = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/sulley_profile.jpg')
+
 sulley.profile_pic.attach(
-    io: File.open("/Users/ortiz-garcia/desktop/bluebook-images/sulley_profile.jpg"), 
+    io: sulley_profile, 
     filename: "sulley_profile.jpg"
 )
 
+sulley_cover = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/sulley_cover.jpg')
+
 sulley.cover_pic.attach(
-    io: File.open("/Users/ortiz-garcia/desktop/bluebook-images/sulley_cover.jpg"), 
+    io: sulley_cover, 
     filename: "sulley_cover.jpg"
 )
 
+manhattan_profile = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/manhattan_profile.jpeg')
+
 manhattan.profile_pic.attach(
-    io: File.open("/Users/ortiz-garcia/desktop/bluebook-images/manhattan_profile.jpeg"), 
+    io: manhattan_profile, 
     filename: "manhattan_profile.jpeg"
 )
 
+manhattan_cover = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/manhattan_cover.jpeg')
+
 manhattan.cover_pic.attach(
-    io: File.open("/Users/ortiz-garcia/desktop/bluebook-images/manhattan_cover.jpeg"), 
+    io: manhattan_cover, 
     filename: "manhattan_cover.jpeg"
 )
 
