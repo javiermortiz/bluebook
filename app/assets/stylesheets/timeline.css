@@ -1,17 +1,83 @@
 .timeline {
-    background-color: white;
     width: 625px;
+}
+
+.post-form-container {
+    background: white;
+    margin-bottom: 10px;
     border-radius: 5px;
 }
 
-.timeline-list {
-    width: 600px;
-    margin: auto;
-    margin-top: 10px;
+.post-form {
+    display: flex;
+    flex-direction: column;
 }
 
-.timeline-list li {
-    padding: 10px;
-    list-style: none;
-    border-bottom: 1px solid lightgray;
+.post-form-input-container {
+    border-bottom: .5px solid lightgray;
+    margin: auto;
+    margin-bottom: 1px;
+    width: 97%;
+    height: 60px;
+    display: flex;
+}
+
+.post-form-input {
+    border: none;
+    font-size: 20px;
+    width: 100%;
+}
+
+.post-form-input::placeholder{
+    font-size: 20px;
+    color: lightgray;
+}
+
+.post-form > button {
+    background-color: #3b5998;
+    color: white;
+    height: 33px;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 5px;
+    width: 97%;
+    margin: auto;
+}
+
+.post-thumbnail {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 7px;
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.posts-title {
+    color: rgb(95, 95, 95);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.posts {
+    background: teal;
+}
+
+.posts-list {
+    list-style-type: none;
+}
+
+.posts-list > li {
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.post-body {
+
+}
+
+.post-delete-button {
+
 }

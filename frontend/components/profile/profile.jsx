@@ -3,7 +3,7 @@ import BluebarContainer from '../logged_in/bluebar_container';
 import Profilebar from '../profile/profilebar';
 import ProfilePics from './profile_pics';
 import Details from './details';
-import TimelineContainer from './timeline_container';
+import Timeline from '../timeline/timeline';
 import FriendshipStatusContainer from './friendship_status_container';
 
 class Profile extends React.Component {
@@ -34,7 +34,7 @@ class Profile extends React.Component {
                 <Profilebar currentUser={this.props.user} />
                 <div className="details-timeline">
                     <Details currentUser={this.props.user} />
-                    <TimelineContainer currentUser={this.props.user} />
+                    <Timeline currentUser={this.props.user} />
                 </div>
                 
             </div>

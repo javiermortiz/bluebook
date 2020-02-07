@@ -4,3 +4,10 @@ export const fetchUser = userId => (
         url: `/api/users/${userId}`
     })
 )
+
+export const fetchUsers = profileId => (
+    $.ajax({
+        method: 'GET',
+        url: ``
+    })
+)
