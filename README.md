@@ -37,8 +37,23 @@ if (this.props.errors[0] === 'login') {
 ### Profile
 <img width="1264" alt="bluebook-profile" src="https://user-images.githubusercontent.com/19655779/74054336-b17c7d00-4992-11ea-906d-4d991ceafcbf.png">
 
+What you see on this page is actually 9 different components rendering at the same time. The bluebar needs the current user data to display the right name and also to link to the current user's profile. The friend request holds data about who has sent a friend request to the current user but also needs the request info to display their name and link to their profile. The profile picture and cover picture are fetched from an [AWS S3 bucket](https://aws.amazon.com/) using [Active Storage](https://edgeguides.rubyonrails.org/active_storage_overview.html). The Details component fetches data from the user's profile we are visiting, the Friends box uses a User Model association in the back end to fetch that user's friends. 
+
 ### Friend Request
 <img width="353" alt="bluebook-request" src="https://user-images.githubusercontent.com/19655779/74054430-ea1c5680-4992-11ea-80b6-41e13b99601c.png">
 
+This is one of trickiest components of the app. You have to consider different scenarios and render different data according to each one of those. You can be the user starting the friendship request, in that case you should see 'Add friend' and then 'Friend Request Sent'. If you are on the receiving end of the request, you should have the option to confirm or cancel the request. Once you confirm the request, the button should say 'Friends' and now you have the option to unfriend the other user. Furthermore, once a friendship is created on the database, we need to delete the original friendship request in order for this logic to work. 
+
 ### Posts
 <img width="1261" alt="bluebook-posts" src="https://user-images.githubusercontent.com/19655779/74054517-10da8d00-4993-11ea-9098-5b52f559fa9c.png">
+
+You can only post on a friend's profile, so that means that this container needs access to the user's friends in order to render the post form. Additionally, you need extra data associated to the post such as the post's author name and profile picture which you can get by using a model association at the back end level. You also need to check for the condition where the delete button is only showed if the current user is the author of the post.
+
+```javascript
+this.props.currentUser.id === post.author_id &&
+<button 
+  onClick={ this.handleDelete(post.for_user_id, post.id) }
+  className="post-delete-button">
+    Delete
+</button>
+```
