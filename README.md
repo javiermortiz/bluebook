@@ -12,6 +12,7 @@ The front end of the site was built with [React](https://reactjs.org/) along wit
 
 ## Site
 ### Landing Page
+<img width="1280" alt="bluebook-homepage" src="https://user-images.githubusercontent.com/19655779/74054205-6bbfb480-4992-11ea-8988-84b880d17f08.png">
 ### Profile
 ### Friend Request
 ### Posts
