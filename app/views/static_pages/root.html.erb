@@ -2,6 +2,8 @@
     <script type="text/javascript">
         window.currentUser = <%= render('api/users/user.json.jbuilder',
           user: current_user).html_safe %>
+        window.coverURL = "<%= image_url('default_cover.jpg') %>"
+        window.profileURL = "<%= image_url('default_profile.png') %>"
     </script>
 <% end %>
 <main id="root"></main>

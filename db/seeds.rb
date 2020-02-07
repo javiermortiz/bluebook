@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Friendship.destroy_all
+FriendshipRequest.destroy_all
+Post.destroy_all
+
 squirtle = User.create(
     email: 'squirtle@pokemon.com', 
     password: 'squirtle',

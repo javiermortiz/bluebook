@@ -7,12 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <% if logged_in? %>
-      <script type="text/javascript">
-        window.coverURL = "<%= image_url('default_cover.jpg') %>"
-        window.profileURL = "<%= image_url('default_profile.png') %>"
-      </script>
-    <% end %>
   </head>
 
   <body>
