@@ -1,5 +1,4 @@
 # bluebook
-
 Bluebook is a facebook clone. It is a web app with full authentication features where you can sign up, log in with your credentials, and have your own profile with pictures and personal information. Build your social network by sending friend requests to different users and approving or declining received requests. Once a friendship is confirmed by both parties, you can post messages on each other's profiles. Also, receive notifications about the most recent site activity of the members of your social circle.
 
 ## Demo
@@ -14,5 +13,6 @@ The front end of the site was built with [React](https://reactjs.org/) along wit
 ### Landing Page
 <img width="1280" alt="bluebook-homepage" src="https://user-images.githubusercontent.com/19655779/74054205-6bbfb480-4992-11ea-8988-84b880d17f08.png">
 ### Profile
+<img width="1264" alt="bluebook-profile" src="https://user-images.githubusercontent.com/19655779/74054336-b17c7d00-4992-11ea-906d-4d991ceafcbf.png">
 ### Friend Request
 ### Posts
