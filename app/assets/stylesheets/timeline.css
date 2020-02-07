@@ -61,23 +61,62 @@
 }
 
 .posts {
-    background: teal;
+ 
 }
 
 .posts-list {
     list-style-type: none;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .posts-list > li {
     background-color: white;
     border-radius: 5px;
     margin-bottom: 10px;
+    position: relative;
+}
+
+.post-header {
+    display: flex;
+    height: 58px;
+    width: 97%;
+    margin: auto;
+}
+
+.post-header-img {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 7px;
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.post-header-details {
+    padding-top: 14px;
+}
+
+.post-header-name {
+    color: #3b5998;
+    margin-bottom: 2px;
+}
+
+.post-header-date {
+    color: gray;
+    font-size: 12px;
 }
 
 .post-body {
-
+    width: 97%;
+    margin: auto;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 5px;
 }
 
 .post-delete-button {
-
+    position: absolute;
+    top: 15px;
+    right: 25px;
 }

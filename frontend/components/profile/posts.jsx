@@ -37,8 +37,21 @@ class Posts extends React.Component {
                 <ul className="posts-list">
                     {Object.values(this.props.posts).map(post => (
                         <li>
-                            {console.log(post)}
-                            {post.created_at}
+                            <div className="post-header">
+                                <img className="post-header-img" src={post.author.profileUrl} />
+                            
+                                <div className="post-header-details">
+                                    <div className="post-header-name">
+                                        {`${post.author.first_name} ${post.author.surname}`}
+                                    </div>
+                                    <div className="post-header-date">
+                                        {
+                                            new Date(`${post.created_at}`).toLocaleString()
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div className="post-body">
                                 {post.body}
                             </div>
