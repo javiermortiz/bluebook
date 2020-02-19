@@ -37,6 +37,7 @@
     height: 18px;
     padding-left: 3px;
     background-color: #dde8ff;
+    outline: none;
 }
 
 .login-nav-form-button {
@@ -110,6 +111,7 @@
     padding-left: 10px;
     border-style: solid;
     border-color: lightgray;
+    outline: none;
 }
 
 .signup-form-text input::placeholder {
@@ -119,11 +121,13 @@
 
 .signup-main-form-name > input {
     width: 190px;
+    outline: none;
 }
 
 .signup-main-form-email > input, 
 .signup-main-form-password > input {
     width: 410px;
+    outline: none;
 }
 
 .signup-form-text > div {

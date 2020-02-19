@@ -52,6 +52,23 @@ json.friends do
             if friend.profile_pic.attached?
                 json.profileUrl url_for(friend.profile_pic) 
             end 
+            json.posts do 
+                friend.authored_posts.each do |post|
+                    json.set! post.id do 
+                        json.extract! post, :id, :body, :author_id, :for_user_id, :created_at
+                        json.author do 
+                            post.author do 
+                                json.extract! post.author, :first_name, :surname, :profile_pic 
+                            end 
+                        end 
+                        json.recipient do
+                            post.recipient do
+                                json.extract! post.recipient, :first_name, :surname, :profile_pic
+                            end 
+                        end 
+                    end 
+                end 
+            end 
         end 
     end 
 end 
