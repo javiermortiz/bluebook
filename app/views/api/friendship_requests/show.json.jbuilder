@@ -44,6 +44,18 @@ json.users do
                 end 
             end 
         end 
+        
+        json.friends do 
+            @user1.friends.each do |friend|
+                json.set! friend.id do 
+                    json.extract! friend, :id, :first_name, :surname
+                    if friend.profile_pic.attached?
+                        json.profileUrl url_for(friend.profile_pic) 
+                    end 
+                end 
+            end 
+        end 
+
     end 
 
     json.set! @user2.id do 
@@ -86,6 +98,18 @@ json.users do
                     json.extract! friendship, :id, :user_id, :friends_with_user_id
                 end 
             end 
-        end  
+        end 
+
+        json.friends do 
+            @user2.friends.each do |friend|
+                json.set! friend.id do 
+                    json.extract! friend, :id, :first_name, :surname
+                    if friend.profile_pic.attached?
+                        json.profileUrl url_for(friend.profile_pic) 
+                    end 
+                end 
+            end 
+        end 
+
     end 
 end 
