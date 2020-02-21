@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     resources :friendship_requests, only: [:create, :index, :destroy]
     resources :friendships, only: [:create, :index, :destroy]
   end 
+  get '/api/users/:id/newsfeed', to: 'api/users#newsfeed'
 end

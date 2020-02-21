@@ -33,6 +33,7 @@ class Posts extends React.Component {
         if (this.props.posts === undefined) {
             return null;
         }
+        debugger
         return (
             <div className="posts">
                 <ul className="posts-list">

@@ -1,10 +1,10 @@
 class Api::PostsController < ApplicationController 
     def index
-        @posts = User.find(params[:user_id]).received_posts
+        @received_posts = User.find(params[:user_id]).received_posts
     end
 
     def show
-
+        
     end 
 
     def create
