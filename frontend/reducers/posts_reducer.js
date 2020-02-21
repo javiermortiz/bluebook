@@ -9,8 +9,7 @@ const PostReducer = (state = {}, action) => {
         case RECEIVE_NEWSFEED_POSTS:
             return Object.assign({}, action.posts);
         case RECEIVE_POST:
-            const newPost = Object.assign({}, state[action.post.for_user_id], { [action.post.id] : action.post } );
-            return Object.assign({}, state, { [action.post.for_user_id]: newPost });
+            return Object.assign({}, state, { [action.post.id]: action.post });
         case REMOVE_POST:
             const nextState = merge({}, state);
             delete nextState[action.post.for_user_id][action.post.id];
