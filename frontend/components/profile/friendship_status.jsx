@@ -62,7 +62,10 @@ class FriendshipStatus extends React.Component {
     }
 
     render () {
-        if (this.props.friendsWith.includes(this.props.currentProfile)) {
+        debugger
+        if (this.props.currentProfile === this.props.currentUser.id) {
+            return null;
+        } else if (this.props.friendsWith.includes(this.props.currentProfile)) {
             return (
                 <div className="friend-status">
                     <button className="friend-status-button">Friends</button>
@@ -72,8 +75,6 @@ class FriendshipStatus extends React.Component {
                     </ul>
                 </div>
             )
-        } else if (this.props.currentProfile === this.props.currentUser.id) {
-            return null;
         } else if (this.props.initiatedRequestsWith.includes(this.props.currentProfile)) {
             return (
                 <div className="friend-status">
