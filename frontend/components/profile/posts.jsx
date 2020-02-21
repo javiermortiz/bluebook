@@ -7,16 +7,16 @@ class Posts extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchPosts(this.props.user.id);
-    };
+    // componentDidMount() {
+    //     this.props.fetchPosts(this.props.user.id);
+    // };
 
-    componentDidUpdate(prevProps) {
-        const userId = this.props.currentUser.id
-        if (prevProps.currentUser.id !== userId) {
-            this.props.fetchPosts(userId);
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     const userId = this.props.currentUser.id
+    //     if (prevProps.currentUser.id !== userId) {
+    //         this.props.fetchPosts(userId);
+    //     }
+    // }
 
     handleDelete (for_user_id, postId) {
         return e => {
@@ -30,7 +30,7 @@ class Posts extends React.Component {
     }
 
     render() {
-        if (this.props.posts === undefined) {
+        if (Object.values(this.props.posts).length === 0) {
             return null;
         }
         return (

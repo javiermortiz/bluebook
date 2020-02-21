@@ -1,10 +1,15 @@
 class Api::PostsController < ApplicationController 
     def index
-        @posts = User.find(params[:user_id]).received_posts
+        @received_posts = User.find(params[:user_id]).received_posts
     end
 
-    def show
-
+    def newsfeed
+        friends = current_user.friends 
+        friends << current_user 
+        posts = []
+        friends.each { |friend| posts.concat(friend.authored_posts) }
+        posts.sort_by &:created_at
+        @posts = posts
     end 
 
     def create

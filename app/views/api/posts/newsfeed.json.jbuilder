@@ -1,4 +1,4 @@
-@received_posts.each do |post|
+@posts.each do |post|
     json.set! post.id do
         json.extract! post, :id, :body, :author_id, :for_user_id, :created_at
         json.author do 
@@ -7,5 +7,5 @@
                 json.profileUrl url_for(post.author.profile_pic) 
             end 
         end 
-    end 
+    end  
 end 

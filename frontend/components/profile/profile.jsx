@@ -6,6 +6,8 @@ import Details from './details';
 import Timeline from '../timeline/timeline';
 import FriendshipStatusContainer from './friendship_status_container';
 import Friends from './friends';
+import PostFormContainer from '../profile/post_form_container';
+import PostsContainer from '../profile/posts_container';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -14,12 +16,14 @@ class Profile extends React.Component {
 
     componentDidMount () {
         this.props.fetchUser(this.props.match.params.userId);
+        this.props.fetchTimelinePosts(this.props.match.params.userId);
     }
 
     componentDidUpdate (prevProps) {
         const userId = this.props.match.params.userId
         if (prevProps.match.params.userId !== userId){
             this.props.fetchUser(userId);
+            this.props.fetchTimelinePosts(this.props.match.params.userId);
         }
     }
 
@@ -39,7 +43,11 @@ class Profile extends React.Component {
                         <Friends currentUser={this.props.user} />
                     </div>
                     
-                    <Timeline currentUser={this.props.user} />
+                    <div className="timeline">
+                        <PostFormContainer currentUser={this.props.user} />
+                        <div className="posts-title">Posts</div>
+                        <PostsContainer currentUser={this.props.user} posts={this.props.posts}/>
+                    </div>
                 </div>
                 
             </div>
