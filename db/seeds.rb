@@ -108,14 +108,17 @@ Friendship.create(user_id: megamind.id, friends_with_user_id: squirtle.id)
 Friendship.create(user_id: squirtle.id, friends_with_user_id: megamind.id)
 Friendship.create(user_id: megamind.id, friends_with_user_id: sulley.id)
 Friendship.create(user_id: sulley.id, friends_with_user_id: megamind.id)
-
+Friendship.create(user_id: squirtle.id, friends_with_user_id: sulley.id)
+Friendship.create(user_id: sulley.id, friends_with_user_id: squirtle.id)
 FriendshipRequest.create(status: "pending", started_by_user_id: manhattan.id, waiting_for_user_id: megamind.id)
 
-Post.create(body: "ROAR!!!", author_id: sulley.id, for_user_id: megamind.id)
-Post.create(body: "squirtle squirtle!", author_id: squirtle.id, for_user_id: megamind.id)
+Post.create(body: "ROAR!!!", author_id: sulley.id, for_user_id: squirtle.id)
+Post.create(body: "Squirtle Squirtle!", author_id: squirtle.id, for_user_id: sulley.id)
 Post.create(
     body: "I'm the bad guy. I don't save the day, I don't fly off into the sunset and I don't get the girl.", 
     author_id: megamind.id,
     for_user_id: megamind.id 
 )
+Post.create(body: "Squirtle Squirtle!", author_id: squirtle.id, for_user_id: megamind.id)
+Post.create(body: "ROAR!!!", author_id: sulley.id, for_user_id: megamind.id)
 Post.create(body: "Nothing ends...Nothing ever ends.", author_id: manhattan.id, for_user_id: manhattan.id)

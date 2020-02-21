@@ -62,7 +62,6 @@ class FriendshipStatus extends React.Component {
     }
 
     render () {
-        debugger
         if (this.props.currentProfile === this.props.currentUser.id) {
             return null;
         } else if (this.props.friendsWith.includes(this.props.currentProfile)) {

@@ -4,7 +4,7 @@ class Api::PostsController < ApplicationController
     end
 
     def newsfeed
-        friends = current_user.friends 
+        friends = current_user.friends.map { |friend| friend }
         friends << current_user 
         posts = []
         friends.each { |friend| posts.concat(friend.authored_posts) }
