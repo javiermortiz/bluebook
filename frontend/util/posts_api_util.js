@@ -1,9 +1,16 @@
-export const fetchUserPosts = userId => {
+export const fetchTimelinePosts = userId => {
     return $.ajax({
         method: "GET",
         url: `/api/users/${userId}/posts`
     })
 };
+
+export const fetchNewsfeedPosts = () => {
+    return $.ajax({
+        method: "GET",
+        url: "/api/posts/newsfeed"
+    })
+}
 
 export const createPost = post => {
     return $.ajax({

@@ -1,12 +1,18 @@
 import * as PostAPIUtil from '../util/posts_api_util';
 
-export const RECEIVE_POSTS = "RECEIVE_POSTS";
+export const RECEIVE_TIMELINE_POSTS = "RECEIVE_TIMELINE_POSTS";
+export const RECEIVE_NEWSFEED_POSTS = "RECEIVE_NEWSFEED_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 
-const receivePosts = posts => ({
-    type: RECEIVE_POSTS,
+const receiveTimelinePosts = posts => ({
+    type: RECEIVE_TIMELINE_POSTS,
     posts 
+});
+
+const receiveNewsfeedPosts = posts => ({
+    type: RECEIVE_NEWSFEED_POSTS,
+    posts
 });
 
 const receivePost = post => ({
@@ -19,13 +25,17 @@ const removePost = post => ({
     post
 });
 
-export const fetchUserPosts = userId => dispatch => (
-    PostAPIUtil.fetchUserPosts(userId)
+export const fetchTimelinePosts = userId => dispatch => (
+    PostAPIUtil.fetchTimelinePosts(userId)
         .then(posts => {
-            return dispatch(receivePosts(posts))
+            return dispatch(receiveTimelinePosts(posts))
         })
 );
 
+export const fetchNewsfeedPosts = () => dispatch => (
+    PostAPIUtil.fetchNewsfeedPosts()
+        .then(posts => dispatch(receiveNewsfeedPosts(posts)))
+)
 export const createPost = post => dispatch => (
     PostAPIUtil.createPost(post)
         .then(receivedPost => dispatch(receivePost(receivedPost)))

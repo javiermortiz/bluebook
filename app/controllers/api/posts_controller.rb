@@ -3,8 +3,8 @@ class Api::PostsController < ApplicationController
         @received_posts = User.find(params[:user_id]).received_posts
     end
 
-    def show
-        
+    def newsfeed
+        @posts = current_user.authored_posts
     end 
 
     def create
