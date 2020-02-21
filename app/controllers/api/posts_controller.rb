@@ -4,7 +4,12 @@ class Api::PostsController < ApplicationController
     end
 
     def newsfeed
-        @posts = current_user.authored_posts
+        friends = current_user.friends 
+        friends << current_user 
+        posts = []
+        friends.each { |friend| posts.concat(friend.authored_posts) }
+        posts.sort_by &:created_at
+        @posts = posts
     end 
 
     def create
