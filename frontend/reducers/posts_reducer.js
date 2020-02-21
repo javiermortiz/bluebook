@@ -11,8 +11,8 @@ const PostReducer = (state = {}, action) => {
         case RECEIVE_POST:
             return Object.assign({}, state, { [action.post.id]: action.post });
         case REMOVE_POST:
-            const nextState = merge({}, state);
-            delete nextState[action.post.for_user_id][action.post.id];
+            const nextState = Object.assign({}, state);
+            delete nextState[action.post.id];
             return nextState;
         default:
             return state;

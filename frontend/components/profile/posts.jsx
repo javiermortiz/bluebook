@@ -30,7 +30,6 @@ class Posts extends React.Component {
     }
 
     render() {
-        debugger
         if (Object.values(this.props.posts).length === 0) {
             return null;
         }
