@@ -50,6 +50,7 @@
     border-color: black;
     cursor: pointer;
     padding: 5px;
+    outline: none;
 }
 
 .login-nav-form-button > input:hover {
