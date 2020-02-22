@@ -26,6 +26,7 @@
     border: none;
     font-size: 20px;
     width: 100%;
+    outline: none;
 }
 
 .post-form-input::placeholder{
@@ -43,6 +44,13 @@
     border-radius: 5px;
     width: 97%;
     margin: auto;
+    outline: none;
+    cursor: pointer;
+}
+
+#disabled {
+    cursor: auto;
+    background-color: #6e82ad;
 }
 
 .post-thumbnail {

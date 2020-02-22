@@ -19,7 +19,9 @@ class PostForm extends React.Component {
     }
 
     update() {
-        return e => this.setState({ body: e.currentTarget.value })
+        return e => {
+            this.setState({ body: e.currentTarget.value });
+        }
     }
 
     render () {
@@ -44,7 +46,12 @@ class PostForm extends React.Component {
                             />
                         </div>
                     
-                        <button>Post</button>
+                        <button 
+                            disabled={this.state.body.length === 0} 
+                            id={this.state.body.length === 0 ? "disabled" : ""}
+                        >
+                            Post
+                        </button>
                     </form>
                 </div>
             )
