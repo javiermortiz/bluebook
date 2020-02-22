@@ -45,6 +45,12 @@
     width: 97%;
     margin: auto;
     outline: none;
+    cursor: pointer;
+}
+
+#disabled {
+    cursor: auto;
+    background-color: #6e82ad;
 }
 
 .post-thumbnail {
