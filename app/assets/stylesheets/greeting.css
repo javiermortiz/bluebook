@@ -259,3 +259,52 @@
     top: 60px;
     left: -185px;
 }
+
+.footer-container {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+}
+
+.footer {
+    color: #737373;
+    margin: 0 auto;
+    width: 980px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    height: 45px;
+}
+
+.footer-name {
+    margin-right: 50px;
+}
+
+.footer-list {
+    display: flex;
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-list > li {
+    list-style-type: none;
+}
+
+.footer-list span {
+    margin-left: 3px;
+}
+
+.footer-list a {
+    text-decoration: none;
+    color: #385898;
+}
+
+.footer-list a:hover {
+    text-decoration: underline;
+}
+
+html, body, #root, .welcome-page {
+    height: 100%
+}
