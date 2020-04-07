@@ -47,12 +47,12 @@
     font-size: 14px;
 }
 
-.bluebar_nav_list > li > a:hover {
-    background-color:  #203664;
+.bluebar_nav_list > li:hover {
+    background-color:  #29447e;
 }
 
-.bluebar_nav_list > li:last-child:hover {
-    background-color: #3b5998;
+.bluebar_nav_list > li:last-child > button:hover {
+    background-color: #29447e;
 }
 
 .bluebar_nav_list > li:last-child > button {
@@ -63,6 +63,11 @@
     display: block;
     cursor: pointer;
     padding: 2px 15px;
+    height: 35px;
+}
+
+.bluebar_nav_list button:hover {
+    background-color:  #29447e;
 }
 
 .bluebar_nav {
