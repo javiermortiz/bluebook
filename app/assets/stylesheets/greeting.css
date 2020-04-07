@@ -1,6 +1,7 @@
 /* login */
 .login-header {
     background-color: #3b5998;
+    border-bottom: 1px solid #133783;
 }
 
 .login-nav {
@@ -8,12 +9,13 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
+    height: 85px;
 }
 
 .login-nav-form {
     display: flex;
     justify-content: space-around;
-    padding-top: 15px;
+    padding-top: 19px;
     width: 500px;
 }
 
@@ -58,9 +60,9 @@
 }
 
 .login-nav-logo {
-    padding: 25px 10px 10px 10px;
+    padding: 30px 10px 10px 10px;
     color: white;
-    font-size: 35px;
+    font-size: 40px;
 }
 
 /* signup */
@@ -83,7 +85,7 @@
 
 .signup-main-form {
     width: 425px;
-    margin-right: 20px;
+    margin-right: 11px;
     margin-top: 25px;
 }
 
