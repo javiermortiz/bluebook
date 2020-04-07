@@ -121,7 +121,7 @@
 }
 
 .signup-main-form-name > input {
-    width: 190px;
+    width: 193px;
     outline: none;
 }
 
@@ -162,7 +162,7 @@
 }
 
 .gender-male {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .gender-inputs input {
@@ -307,4 +307,11 @@
 
 html, body, #root, .welcome-page {
     height: 100%
+}
+
+select {
+    height: 30px;
+    margin-right: 10px;
+    outline: none;
+    font-size: 13px;
 }

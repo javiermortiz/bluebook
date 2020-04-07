@@ -27,7 +27,7 @@ class Bluebar extends React.Component {
         return (
             <header className="bluebar">
 
-                <nav className="bluebar_nav group">
+                <nav className="bluebar_nav">
 
                     <h1 className="bluebar_nav_logo"><Link to={`/`}>b</Link></h1>
 
