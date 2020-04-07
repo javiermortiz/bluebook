@@ -34,19 +34,21 @@ class Profile extends React.Component {
         return (
             <div className="profile-container">
                 <BluebarContainer />
-                <ProfilePics currentUser={this.props.user}/>
-                <FriendshipStatusContainer currentProfile={this.props.user.id}/>
-                <Profilebar currentUser={this.props.user} />
-                <div className="details-timeline">
-                    <div className="details-friends">
-                        <Details currentUser={this.props.user} />
-                        <Friends currentUser={this.props.user} />
-                    </div>
-                    
-                    <div className="timeline">
-                        <PostFormContainer currentUser={this.props.user} />
-                        <div className="posts-title">Posts</div>
-                        <PostsContainer currentUser={this.props.user} posts={this.props.posts}/>
+                <div className="profile-contents-container">
+                    <ProfilePics currentUser={this.props.user}/>
+                    <FriendshipStatusContainer currentProfile={this.props.user.id}/>
+                    <Profilebar currentUser={this.props.user} />
+                    <div className="details-timeline">
+                        <div className="details-friends">
+                            <Details currentUser={this.props.user} />
+                            <Friends currentUser={this.props.user} />
+                        </div>
+                        
+                        <div className="timeline">
+                            <PostFormContainer currentUser={this.props.user} />
+                            <div className="posts-title">Posts</div>
+                            <PostsContainer currentUser={this.props.user} posts={this.props.posts}/>
+                        </div>
                     </div>
                 </div>
                 

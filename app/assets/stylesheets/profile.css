@@ -1,12 +1,16 @@
+.profile-contents-container {
+    margin-right: 175px;
+}
+
 .pic-container {
-    width: 1000px;
-    margin-left: 50px;
+    width: 900px;
+    margin: auto;
     position: relative;
 }
 
 .cover-pic {
     object-fit: cover;
-    width: 1000px;
+    width: 100%;
     height: 350px;
 }
 
@@ -33,8 +37,8 @@
 .details-timeline {
     display: flex;
     justify-content: space-between;
-    width: 1000px;
-    margin-left: 50px;
+    width: 900px;
+    margin: auto;
     margin-top: 15px;
 }
 

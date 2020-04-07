@@ -1,11 +1,23 @@
 .timeline {
-    width: 580px;
+    width: 535px;
 }
 
 .post-form-container {
     background: white;
     margin-bottom: 10px;
     border-radius: 5px;
+    border: 1px solid #dddfe2;
+}
+
+.post-form-header {
+    padding: 10px 8px;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #dddfe2;
+    border-radius: 5px 5px 0 0;
+    font-weight: 600;
+    font-size: 13px;
+    color: #1d2129;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .post-form {
@@ -14,12 +26,13 @@
 }
 
 .post-form-input-container {
-    border-bottom: .5px solid lightgray;
     margin: auto;
     margin-bottom: 1px;
     width: 97%;
-    height: 60px;
+    height: 75px;
     display: flex;
+    align-items: start;
+    border-bottom: 1px solid #dddfe2;
 }
 
 .post-form-input {
@@ -27,6 +40,7 @@
     font-size: 20px;
     width: 100%;
     outline: none;
+    margin-top: 19px;
 }
 
 .post-form-input::placeholder{
@@ -34,7 +48,7 @@
     color: lightgray;
 }
 
-.post-form > button {
+.post-form  button {
     background-color: #3b5998;
     color: white;
     height: 33px;
@@ -42,7 +56,7 @@
     font-size: 12px;
     padding: 8px;
     border-radius: 5px;
-    width: 97%;
+    width: 100%;
     margin: auto;
     outline: none;
     cursor: pointer;
@@ -51,6 +65,11 @@
 #disabled {
     cursor: auto;
     background-color: #6e82ad;
+}
+
+.post-form-footer {
+    padding: 8px;
+    border-radius: 0 0 5px 5px;
 }
 
 .post-thumbnail {
@@ -83,6 +102,7 @@
     border-radius: 5px;
     margin-bottom: 10px;
     position: relative;
+    border: 1px solid #dddfe2;
 }
 
 .post-header {

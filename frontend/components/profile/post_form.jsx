@@ -34,6 +34,7 @@ class PostForm extends React.Component {
             this.props.currentUser.id === this.props.currentProfile) {
             return (
                 <div className="post-form-container">
+                    <div className="post-form-header">Create Post</div>
                     <form className="post-form" onSubmit={this.handleSubmit}>
                         <div className="post-form-input-container">
                             <img className="post-thumbnail" src={profileUrl} />
@@ -46,12 +47,15 @@ class PostForm extends React.Component {
                             />
                         </div>
                     
-                        <button 
-                            disabled={this.state.body.length === 0} 
-                            id={this.state.body.length === 0 ? "disabled" : ""}
-                        >
-                            Post
-                        </button>
+                        <div className="post-form-footer">
+                            <button
+                                disabled={this.state.body.length === 0}
+                                id={this.state.body.length === 0 ? "disabled" : ""}
+                            >
+                                Post
+                            </button>
+                        </div>
+                        
                     </form>
                 </div>
             )
