@@ -1,11 +1,13 @@
 .profile-contents-container {
-    margin-right: 175px;
+    margin-right: 95px;
 }
 
 .pic-container {
     width: 900px;
     margin: auto;
     position: relative;
+    border-left: 1px solid #dddfe2;
+    border-right: 1px solid #dddfe2;
 }
 
 .cover-pic {

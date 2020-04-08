@@ -4,11 +4,13 @@
     margin: auto;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    border: 1px solid #dddfe2;
+    border-top: none;
 }
 
 .profile_nav_list {
     float: right;
-    margin-right: 200px;
+    margin-right: 20px;
 }
 
 .profile_nav_list > li {

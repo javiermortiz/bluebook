@@ -62,7 +62,7 @@ class Posts extends React.Component {
                                 <button 
                                     onClick={this.handleDelete(post.for_user_id, post.id)}
                                     className="post-delete-button">
-                                    Delete
+                                    X
                                 </button>
                             }
                         </li>

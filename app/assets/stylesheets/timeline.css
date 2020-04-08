@@ -148,6 +148,14 @@
 
 .post-delete-button {
     position: absolute;
-    top: 15px;
-    right: 25px;
+    top: 14px;
+    right: 8px;
+    color: gray;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.post-delete-button:hover {
+    color: black;
 }

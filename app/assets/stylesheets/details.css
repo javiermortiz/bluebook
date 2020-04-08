@@ -2,6 +2,7 @@
     background-color: white;
     width: 350px;
     border-radius: 5px;
+    border: 1px solid #dddfe2;
 }
 
 .details-container > h3 {

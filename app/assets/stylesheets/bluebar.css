@@ -3,10 +3,11 @@
     height: 42px;
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid #133783;
 }
 
 .bluebar_nav {
-    width: 1100px;
+    width: 1020px;
     display: flex;
     justify-content: space-between;
     align-items: center;

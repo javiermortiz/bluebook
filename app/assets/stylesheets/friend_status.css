@@ -1,8 +1,7 @@
 .friend-status {
     position: absolute;
-    top: 353px;
-    left: 800px;
-    height: 50px;
+    bottom: 12px;
+    right: 20px;
 }
 
 .friend-status-button {
@@ -12,6 +11,8 @@
     font-size: 12px;
     border-radius: 5px;
     cursor: pointer;
+    width: 115px;
+    height: 50px;
 }
 
 .friend-status-button:hover {
@@ -21,12 +22,14 @@
 .friend-status-list {
     display: none;
     position: absolute;
-    top: 45px;
     width: 180px;
     list-style: none;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 5px;
+    top: 59px;
+    left: -160px;
+    z-index: 10;
 }
 
 .friend-status-list > li {
@@ -45,6 +48,7 @@
     background-color: white;
     margin: auto;
     font-size: 12px;
+    cursor: pointer;
 }
 
 .friend-status-list > li > button:hover {
@@ -61,6 +65,7 @@
   z-index: 1;
   display: none;
   position: absolute;
+  bottom: -10px;
 }
 
 .friend-status:hover .friend-status-up-arrow {

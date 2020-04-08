@@ -1,4 +1,5 @@
 import React from 'react';
+import FriendshipStatusContainer from './friendship_status_container';
 
 class ProfilePics extends React.Component {
     constructor (props) {
@@ -25,6 +26,7 @@ class ProfilePics extends React.Component {
                 <img className="cover-pic" src={coverUrl} />
                 <img className="profile-pic" src={profileUrl} />
                 <h1>{`${this.capitalize(currentUser.first_name)} ${this.capitalize(currentUser.surname)}`}</h1>
+                <FriendshipStatusContainer currentProfile={currentUser.id} />
             </div>
         )
     }
