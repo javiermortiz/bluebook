@@ -187,6 +187,10 @@
     outline: none;
 }
 
+.signup-main-form-button input:hover {
+    background: linear-gradient(#85c774, #578843);
+}
+
 /* errors */
 .signup-form-text .errors, .errors{
     border: 1px solid red;
