@@ -13,7 +13,7 @@ class LoginForm extends React.Component {
 
     demoLogin (e) {
         e.preventDefault();
-        this.props.processForm({email: 'megamind@dreamworks.com', password: 'megamind'})
+        this.props.processForm({email: 'bluebeetle@dc.com', password: 'bluebeetle'})
     }
 
     handleSubmit (e) {

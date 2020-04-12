@@ -48,6 +48,24 @@ manhattan = User.create(
     gender: 'male'
 )
 
+beast = User.create(
+    email: 'beast@xmen.com',
+    password: 'mrbeast',
+    first_name: 'Hank',
+    surname: 'McCoy',
+    birthday: '1963-09-1',
+    gender: 'male'
+)
+
+beetle = User.create(
+    email: 'bluebeetle@dc.com',
+    password: 'bluebeetle',
+    first_name: 'Blue',
+    surname: 'Beetle',
+    birthday: '1939-08-1',
+    gender: 'male'
+)
+
 megamind_profile = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/megamind_profile.jpg')
 
 megamind.profile_pic.attach(
@@ -104,21 +122,49 @@ manhattan.cover_pic.attach(
     filename: "manhattan_cover.jpeg"
 )
 
-Friendship.create(user_id: megamind.id, friends_with_user_id: squirtle.id)
-Friendship.create(user_id: squirtle.id, friends_with_user_id: megamind.id)
-Friendship.create(user_id: megamind.id, friends_with_user_id: sulley.id)
-Friendship.create(user_id: sulley.id, friends_with_user_id: megamind.id)
-Friendship.create(user_id: squirtle.id, friends_with_user_id: sulley.id)
-Friendship.create(user_id: sulley.id, friends_with_user_id: squirtle.id)
-FriendshipRequest.create(status: "pending", started_by_user_id: manhattan.id, waiting_for_user_id: megamind.id)
+beast_profile = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/beast.jpg')
 
-Post.create(body: "ROAR!!!", author_id: sulley.id, for_user_id: squirtle.id)
-Post.create(body: "Squirtle Squirtle!", author_id: squirtle.id, for_user_id: sulley.id)
-Post.create(
-    body: "I'm the bad guy. I don't save the day, I don't fly off into the sunset and I don't get the girl.", 
-    author_id: megamind.id,
-    for_user_id: megamind.id 
+beast.profile_pic.attach(
+    io: beast_profile, 
+    filename: "beast.jpg"
 )
-Post.create(body: "Squirtle Squirtle!", author_id: squirtle.id, for_user_id: megamind.id)
-Post.create(body: "ROAR!!!", author_id: sulley.id, for_user_id: megamind.id)
+
+beast_cover = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/xmen.jpg')
+
+beast.cover_pic.attach(
+    io: beast_cover, 
+    filename: "xmen.jpg"
+)
+
+beetle_profile = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/beetle.jpg')
+
+beetle.profile_pic.attach(
+    io: beetle_profile, 
+    filename: "beetle.jpg"
+)
+
+beetle_cover = open('https://bluebook-demo-dev.s3-us-west-1.amazonaws.com/beetle_cover.jpg')
+
+beetle.cover_pic.attach(
+    io: beetle_cover, 
+    filename: "beetle_cover.jpg"
+)
+
+Friendship.create(user_id: beetle.id, friends_with_user_id: squirtle.id)
+Friendship.create(user_id: squirtle.id, friends_with_user_id: beetle.id)
+Friendship.create(user_id: beetle.id, friends_with_user_id: beast.id)
+Friendship.create(user_id: beast.id, friends_with_user_id: beetle.id)
+Friendship.create(user_id: squirtle.id, friends_with_user_id: beast.id)
+Friendship.create(user_id: beast.id, friends_with_user_id: squirtle.id)
+FriendshipRequest.create(status: "pending", started_by_user_id: manhattan.id, waiting_for_user_id: beetle.id)
+
+Post.create(body: "It's hard to be a beast... sometimes.", author_id: beast.id, for_user_id: squirtle.id)
+Post.create(body: "Squirtle Squirtle!", author_id: squirtle.id, for_user_id: beast.id)
+Post.create(
+    body: "I'm still trying to figure out the 'On' button for this thing.", 
+    author_id: beetle.id,
+    for_user_id: beetle.id 
+)
+Post.create(body: "Squirtle Squirtle!", author_id: squirtle.id, for_user_id: beetle.id)
+Post.create(body: "Oh... My stars and garters!", author_id: beast.id, for_user_id: beetle.id)
 Post.create(body: "Nothing ends...Nothing ever ends.", author_id: manhattan.id, for_user_id: manhattan.id)
