@@ -181,7 +181,7 @@
 
 .requests-dropdown-list > li {
     color: gray;
-    padding: 5px;
+    padding: 2px 0;
     border-bottom: 1px solid lightgray;
 }
 
